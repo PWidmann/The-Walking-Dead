@@ -1,46 +1,51 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    int roomWidth;
-    int roomHeight;
+    
+    public enum RoomType{ StartRoom, HallwayHorizontal, HallwayVertical, BigRoom, SmallRoom};
 
+    [Header("Room Type")]
+    public RoomType roomType;
 
-    public Room(RoomType.type type)
+    [Header("Connection Positions")]
+    public Transform northConnection;
+    public Transform eastConnection;
+    public Transform southConnection;
+    public Transform westConnection;
+
+    [Header("Connection validation")]
+    public bool northConnected = false;
+    public bool eastConnected = false;
+    public bool southConnected = false;
+    public bool westConnected = false;
+
+    [Header("Room Connected")]
+    public bool roomConnected = false;
+
+    private void Start()
     {
-        switch (type)
-        {
-            case RoomType.type.StartRoom:
-                CreateStartRoom();
-                break;
-        }
+        if (!northConnection)
+            northConnected = true;
+
+        if (!eastConnection)
+            eastConnected = true;
+
+        if (!southConnection)
+            southConnected = true;
+
+        if (!westConnection)
+            westConnected = true;
     }
-
-    void CreateStartRoom()
+    private void Update()
     {
-        roomWidth = roomHeight = 5;
-
-        // Create Floor
-        for (int x = 0; x < roomWidth; x++)
+        if (northConnected && eastConnected && southConnected && westConnected)
         {
-            for (int y = 0; y < roomHeight; y++)
-            {
-                var stoneFloor = Instantiate(MapGenerator.Instance.floor_stone, new Vector3(x * 2, 0, y * 2), Quaternion.identity * Quaternion.Euler(90f, RandomFloorRotation(), 0f));
-                stoneFloor.transform.parent = MapGenerator.Instance.levelObject.transform;
-            }
+            roomConnected = true;
         }
-    }
-
-    float RandomFloorRotation()
-    {
-        float angle = 90f;
-
-        int rnd = Random.Range(0, 3);
-
-        angle *= rnd;
-
-        return angle;
     }
 }
