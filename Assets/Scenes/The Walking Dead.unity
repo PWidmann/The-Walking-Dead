@@ -295,8 +295,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.3897779, y: 0.4883244, z: -0.2583463, w: 0.73679686}
-  m_LocalPosition: {x: -0.09850502, y: 17.097965, z: -2.2265038}
+  m_LocalRotation: {x: -0.22393224, y: -0.7671554, z: 0.35118514, w: -0.48784828}
+  m_LocalPosition: {x: -14.979813, y: 43.030334, z: 26.507061}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -331,16 +331,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d0b9e2b47447f40a67fa6a7aea3aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigRooms: 2
+  bigRooms: 4
+  maxRooms: 50
+  startclosingRooms: 15
   startRoom: {fileID: 163586433026014384, guid: 50dacb1cafc8d854cb210348948d3fd6,
     type: 3}
   hallwayHorizontal: {fileID: 7189470348590334798, guid: 553c2227de67ff742bfa8e5f49f0b214,
     type: 3}
   hallwayVertical: {fileID: 1372259462225145932, guid: b88b4e15889c25c42a5c8eac8595cc1b,
     type: 3}
-  bigRoom: {fileID: 4590775972941948037, guid: e744e06c6ce87324fa6be183c9cb8823, type: 3}
+  bigRoom:
+  - {fileID: 4590775972941948037, guid: e744e06c6ce87324fa6be183c9cb8823, type: 3}
+  - {fileID: 4755699321633171608, guid: 1f3877e289df7a24dab58e6274a347f2, type: 3}
+  - {fileID: 64806793837536564, guid: 81672909b4549d048aeaf40a8fb22ccd, type: 3}
+  - {fileID: 381553302356898695, guid: 9d909501c13611a4ba1c3eee595b7e31, type: 3}
+  chamberHorizontal: {fileID: 7309186446088357064, guid: 3fa9682ff5e7c364c9ce4a3c042e6007,
+    type: 3}
+  chamberVertical: {fileID: 1442259533449988493, guid: d370b706779d476418511f1d613459fe,
+    type: 3}
+  endEast: {fileID: 7144918581044730739, guid: 7121968d257f7bc48805f65d27d62c55, type: 3}
+  endWest: {fileID: 6990853944922761805, guid: 2b08c7ec945fd8541b1e26336b8ccdef, type: 3}
+  endNorth: {fileID: 152579313247695955, guid: 49d0be9f198f66140ad09bc532e746ab, type: 3}
+  endSouth: {fileID: 6471379342978514741, guid: b4108417bccb4f94881fa28a1156949a,
+    type: 3}
+  endRoomEast: {fileID: 2375508011627167149, guid: 3c4e6c707494c7a458291f7e142e83b4,
+    type: 3}
+  endRoomWest: {fileID: 680990698270871559, guid: 1f853199a6be22c4380ccd97650bd615,
+    type: 3}
+  endRoomNorth: {fileID: 7979536141531043278, guid: 76444da2fea865343ac0a3075a812c43,
+    type: 3}
+  endRoomSouth: {fileID: 7324126143060516383, guid: 10ef40e80ac591c4387f1503a1cbc713,
+    type: 3}
   levelObject: {fileID: 1247876471}
+  currentRoom: {fileID: 0}
   roomsToConnect: []
+  roomsCreated: 0
 --- !u!4 &917918688
 Transform:
   m_ObjectHideFlags: 0
@@ -407,8 +432,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 21.1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     
-    public enum RoomType{ StartRoom, HallwayHorizontal, HallwayVertical, BigRoom, SmallRoom};
+    public enum RoomType{ StartRoom, HallwayHorizontal, HallwayVertical, BigRoom, SmallRoom, ChamberHorizontal, ChamberVertical, EndNorth, EndSouth, EndWest, EndEast, EndRoomEast, EndRoomWest, EndRoomNorth, EndRoomSouth};
 
     [Header("Room Type")]
     public RoomType roomType;

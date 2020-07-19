@@ -103,9 +103,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3855337658340249238}
   - component: {fileID: 2909266041328568431}
+  - component: {fileID: -3144163597797733699}
+  - component: {fileID: 7264907670995436574}
   m_Layer: 0
   m_Name: HallWayVertical
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372259462225145932}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.4300003, y: 0, z: 41.480003}
+  m_LocalPosition: {x: 33.43, y: 0, z: -15.889999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1856444980246192425}
@@ -147,9 +149,34 @@ MonoBehaviour:
   westConnection: {fileID: 0}
   northConnected: 0
   eastConnected: 0
-  southConnected: 1
+  southConnected: 0
   westConnected: 0
   roomConnected: 0
+--- !u!114 &-3144163597797733699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372259462225145932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98b3f74bd2e76f418302cd434620f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7264907670995436574
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372259462225145932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.111378, y: 2.971757, z: 3.9937005}
+  m_Center: {x: -1.9450798, y: 1.4000335, z: 2.9524567}
 --- !u!1 &1856444980154749061
 GameObject:
   m_ObjectHideFlags: 0
