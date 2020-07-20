@@ -331,8 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d0b9e2b47447f40a67fa6a7aea3aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigRooms: 4
-  maxRooms: 50
+  bigRooms: 5
+  maxRooms: 100
   startclosingRooms: 15
   startRoom: {fileID: 163586433026014384, guid: 50dacb1cafc8d854cb210348948d3fd6,
     type: 3}
@@ -431,8 +431,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 75
+  orthographic: 0
   orthographic size: 21.1
   m_Depth: -1
   m_CullingMask:

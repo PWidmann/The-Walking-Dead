@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.UI;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
@@ -238,10 +239,16 @@ public class MapGenerator : MonoBehaviour
                         endRoomCount++;
                     }
                     else
+                    {
                         SpawnRoom(Room.RoomType.EndSouth, "south");
+                    }
+
                 }
                 else
+                {
                     SpawnRoom(Room.RoomType.HallwayVertical, "south");
+                }
+                    
             }
             else
             {
@@ -332,32 +339,42 @@ public class MapGenerator : MonoBehaviour
         {
             case "east":
                 offset = tempRoomObject.GetComponent<Room>().westConnection.transform.position - currentRoom.GetComponent<Room>().eastConnection.transform.position;
+                tempRoomObject.transform.position -= offset;
+
                 currentRoom.eastConnected = true;
                 tempRoomObject.GetComponent<Room>().westConnected = true;
                 break;
             case "west":
                 offset = tempRoomObject.GetComponent<Room>().eastConnection.transform.position - currentRoom.GetComponent<Room>().westConnection.transform.position;
+                tempRoomObject.transform.position -= offset;
+  
                 currentRoom.westConnected = true;
                 tempRoomObject.GetComponent<Room>().eastConnected = true;
                 break;
             case "north":
                 offset = tempRoomObject.GetComponent<Room>().southConnection.transform.position - currentRoom.GetComponent<Room>().northConnection.transform.position;
+                tempRoomObject.transform.position -= offset;
+
                 currentRoom.northConnected = true;
                 tempRoomObject.GetComponent<Room>().southConnected = true;
                 break;
             case "south":
                 offset = tempRoomObject.GetComponent<Room>().northConnection.transform.position - currentRoom.GetComponent<Room>().southConnection.transform.position;
+                tempRoomObject.transform.position -= offset;
+
+
                 currentRoom.southConnected = true;
                 tempRoomObject.GetComponent<Room>().northConnected = true;
                 break;
         }
 
-        tempRoomObject.transform.position -= offset;
+        
         tempRoomObject.transform.parent = levelObject.transform;
         roomsToConnect.Add(tempRoomObject.GetComponent<Room>());
 
         roomsCreated++;
     }
+
 
     float GetRoomRotation(int rnd)
     {
