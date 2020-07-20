@@ -104,12 +104,13 @@ GameObject:
   - component: {fileID: 2652333654017114730}
   - component: {fileID: 1158606515245090901}
   - component: {fileID: 1205658207236895525}
+  - component: {fileID: -1207652800593904024}
   m_Layer: 0
   m_Name: StartRoom
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2652333654017114730
 Transform:
@@ -162,6 +163,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98b3f74bd2e76f418302cd434620f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-1207652800593904024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163586433026014384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.361734, y: 2.8892689, z: 11.855255}
+  m_Center: {x: 2.487982, y: 1.568017, z: 2.8836231}
 --- !u!1 &332143592772652198
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +655,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &616281301139446904
 Transform:

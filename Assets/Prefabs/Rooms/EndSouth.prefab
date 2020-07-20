@@ -513,7 +513,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5982646536012537853
 Transform:
@@ -571,12 +571,13 @@ GameObject:
   m_Component:
   - component: {fileID: 9170774288513319407}
   - component: {fileID: 5449333262805453776}
+  - component: {fileID: 1684989239408971337}
   m_Layer: 0
   m_Name: EndSouth
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9170774288513319407
 Transform:
@@ -617,6 +618,19 @@ MonoBehaviour:
   southConnected: 0
   westConnected: 0
   roomConnected: 0
+--- !u!65 &1684989239408971337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471379342978514741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.325845, y: 2.9756906, z: 1.1392322}
+  m_Center: {x: -6.946605, y: 1.3814269, z: -0.4937389}
 --- !u!1 &9104431288910938875
 GameObject:
   m_ObjectHideFlags: 0

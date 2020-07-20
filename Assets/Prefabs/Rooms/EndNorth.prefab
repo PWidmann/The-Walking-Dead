@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2636230353679026825}
   - component: {fileID: 1175171846405226678}
+  - component: {fileID: 5175542022003775081}
   m_Layer: 0
   m_Name: EndNorth
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2636230353679026825
 Transform:
@@ -56,6 +57,19 @@ MonoBehaviour:
   southConnected: 0
   westConnected: 0
   roomConnected: 0
+--- !u!65 &5175542022003775081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152579313247695955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9583013, y: 2.8452349, z: 1.6755074}
+  m_Center: {x: -0.50529873, y: 1.4285231, z: 0.52266544}
 --- !u!1 &636773885485113196
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +150,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &636773886255748251
 Transform:

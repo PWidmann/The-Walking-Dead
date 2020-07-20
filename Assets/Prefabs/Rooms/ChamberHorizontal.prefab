@@ -6674,7 +6674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98b3f74bd2e76f418302cd434620f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isColliding: 0
 --- !u!65 &2642259287995523193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6683,11 +6682,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7309186446088357064}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.411926, y: 3.3613663, z: 10.245829}
-  m_Center: {x: 2.963499, y: 1.1806831, z: 2.781787}
+  m_Size: {x: 16.680725, y: 3.6510277, z: 11.853837}
+  m_Center: {x: 2.9671326, y: 1.3255138, z: 2.821569}
 --- !u!1 &7433858204441331059
 GameObject:
   m_ObjectHideFlags: 0

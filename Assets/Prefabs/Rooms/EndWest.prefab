@@ -382,12 +382,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5156435781792158871}
   - component: {fileID: 8310722536903532200}
+  - component: {fileID: 8030585370024797273}
   m_Layer: 0
   m_Name: EndWest
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5156435781792158871
 Transform:
@@ -428,6 +429,19 @@ MonoBehaviour:
   southConnected: 0
   westConnected: 0
   roomConnected: 0
+--- !u!65 &8030585370024797273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990853944922761805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1601152, y: 2.845542, z: 4.255145}
+  m_Center: {x: -6.456301, y: 1.4734492, z: -0.938076}
 --- !u!1 &7767817608310817138
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +488,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7767817609620556421
 Transform:
