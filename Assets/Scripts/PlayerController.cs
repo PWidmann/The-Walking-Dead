@@ -10,16 +10,16 @@ public class PlayerController : MonoBehaviour
     public Vector2 inputDir;
     public Vector3 velocity;
     public bool canMove = true;
+    public float speed = 0;
     public float walkSpeed = 2;
-    public float runSpeedDefault = 6;
-    public float runSpeed = 6;
+    public float runSpeed = 4;
     public float gravity = -12;
     public float jumpHeight = 1;
     public float turnSmoothTime = 0.1f;
     public float turnSmoothVelocity;
     public float speedSmoothTime = 0.1f;
     float speedSmoothVelocity;
-    float currentSpeed;
+    public float currentSpeed;
     float velocityY;
     public bool strafeLeft = false;
     public bool strafeRight = false;
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     Transform cameraT;
     CharacterController controller;
+    Animator animator;
 
     void Start()
     {
@@ -36,6 +37,11 @@ public class PlayerController : MonoBehaviour
         // References
         cameraT = Camera.main.transform;
         controller = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
+
+        speed = walkSpeed;
+
+        inputDir = Vector2.zero;
     }
 
     void Update()
@@ -45,6 +51,19 @@ public class PlayerController : MonoBehaviour
         inputDir = input.normalized;
         Move(inputDir);
 
+        // animator
+        float animationSpeedPercent = currentSpeed / runSpeed;
+        animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = runSpeed;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = walkSpeed;
+        }
 
         Jump();
 
@@ -63,8 +82,9 @@ public class PlayerController : MonoBehaviour
         }
 
         // Smooth runspeed 
-        float targetSpeed = runSpeed * inputDir.magnitude;
+        float targetSpeed = speed * inputDir.magnitude;
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
+
 
         velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
 

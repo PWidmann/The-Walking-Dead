@@ -6,7 +6,37 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Belt
+    second: {fileID: 2100000, guid: 679e5fc7480f9de4aa7aeae1a6e1d69b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face.002
+    second: {fileID: 2100000, guid: 7e124e23120cbf544a8f7b4263b82e7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair.001
+    second: {fileID: 2100000, guid: 61c20e545fbfd1f429a9ff6df29bbcc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pants.001
+    second: {fileID: 2100000, guid: fec2ba2ab0751ee45862dec3d447ca8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: 96c5002cb013ef74e8c8dd50677e775b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin.002
+    second: {fileID: 2100000, guid: 95806433cbd700c439c36031798c3bdf, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

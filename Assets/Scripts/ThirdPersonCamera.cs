@@ -25,7 +25,7 @@ public class ThirdPersonCamera : MonoBehaviour
     // Left / Right
     float yaw = 45f;
     // Up / Down
-    float pitch = 70f;
+    float pitch = 40f;
     
     
 
