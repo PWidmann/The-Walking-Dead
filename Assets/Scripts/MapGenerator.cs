@@ -10,6 +10,9 @@ public class MapGenerator : MonoBehaviour
     public int bigRooms;
     public int startclosingRooms;
 
+    [Header("Player Prefab")]
+    public GameObject player;
+
     [Header("Room Prefabs")]
     public GameObject startRoom;
     public GameObject hallwayHorizontal;
@@ -43,30 +46,33 @@ public class MapGenerator : MonoBehaviour
     public List<Bounds> roomList = new List<Bounds>();
     public bool dungeonGenerated = false;
     private bool roomCollision = false;
+    public bool levelStarted = false;
 
     void Start()
     {
         if (Instance == null)
             Instance = this;
 
-        StartGeneratingDungeon();
+        //StartGeneratingDungeon();
     }
 
     private void Update()
     {
 
-
-        // Connect rooms
-        if (currentRoom.roomConnected)
+        if (currentRoom)
         {
-            roomsToConnect.Remove(currentRoom);
+            // Connect rooms
+            if (currentRoom.roomConnected)
+            {
+                roomsToConnect.Remove(currentRoom);
 
-            if (roomsToConnect.Count > 0)
-                currentRoom = roomsToConnect[0];
-        }
-        else
-        {
-            CreateConnection();
+                if (roomsToConnect.Count > 0)
+                    currentRoom = roomsToConnect[0];
+            }
+            else
+            {
+                CreateConnection();
+            }
         }
 
         //When Finished, check for valid dungeon
@@ -99,15 +105,18 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("JoystickButtonY"))
         {
-            ResetDungeon();
+            if (!levelStarted)
+            {
+                ResetDungeon();
+            }
         }
     }
 
     void StartGeneratingDungeon()
     {
-        // Create Start Room
+        //// Create Start Room
         roomsToConnect.Clear();
         roomList.Clear();
         startRoomObject = Instantiate(startRoom, new Vector3(0, 0, 0), Quaternion.identity * Quaternion.Euler(0, 0, 0));
@@ -449,7 +458,7 @@ public class MapGenerator : MonoBehaviour
     }
 
 
-    void ResetDungeon()
+    public void ResetDungeon()
     {
         int childCount = levelObject.transform.childCount;
         for (var i = childCount - 1; i >= 0; i--)
@@ -458,6 +467,12 @@ public class MapGenerator : MonoBehaviour
         }
 
         StartGeneratingDungeon();
+    }
+
+    public void SpawnPlayer()
+    {
+        if(!levelStarted)
+            Instantiate(player, GameObject.Find("PlayerSpawn").transform.position, Quaternion.Euler(0, 90f, 0));
     }
 
     void CheckForCollision()

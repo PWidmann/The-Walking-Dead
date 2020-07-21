@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
+    public static ThirdPersonCamera Instance;
+
     public bool lockCursor;
     public float mouseSensitivity = 5;
     public Transform target;
@@ -32,6 +34,8 @@ public class ThirdPersonCamera : MonoBehaviour
 
     private void Start()
     {
+        if (Instance == null)
+            Instance = this;
         currentDistanceFromTarget = maxDistanceFromTarget;
     }
 
@@ -51,7 +55,9 @@ public class ThirdPersonCamera : MonoBehaviour
 
             currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
             transform.eulerAngles = currentRotation;
-            transform.position = target.position - transform.forward * currentDistanceFromTarget;
+            
+            if(target)
+                transform.position = target.position - transform.forward * currentDistanceFromTarget;
         }
     }
 
