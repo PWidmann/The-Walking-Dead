@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4519434945317778274}
   - component: {fileID: 7896987021059085623}
   - component: {fileID: 4844533228840940004}
-  - component: {fileID: 4200973244920580724}
   m_Layer: 0
   m_Name: Floor_Stone (53)
   m_TagString: Untagged
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4200973244920580724
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59568364037713961}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &163586433026014384
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +137,7 @@ MonoBehaviour:
   southConnected: 0
   westConnected: 0
   roomConnected: 0
+  hasCollided: 0
 --- !u!114 &1205658207236895525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +158,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163586433026014384}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 18.361734, y: 2.8892689, z: 11.855255}
@@ -373,7 +360,6 @@ GameObject:
   - component: {fileID: 3095148198719680372}
   - component: {fileID: 4925260587138058670}
   - component: {fileID: 1510431465127099584}
-  - component: {fileID: 1806614896099526231}
   m_Layer: 0
   m_Name: Floor_Stone (50)
   m_TagString: Untagged
@@ -442,19 +428,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1806614896099526231
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528931770401322118}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &544106633806330897
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +439,6 @@ GameObject:
   - component: {fileID: 5094645217517362019}
   - component: {fileID: 8369938964622383882}
   - component: {fileID: 1702294309550637435}
-  - component: {fileID: 4110733391921809746}
   m_Layer: 0
   m_Name: Floor_Stone (10)
   m_TagString: Untagged
@@ -535,19 +507,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4110733391921809746
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544106633806330897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &567333646536108666
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +518,6 @@ GameObject:
   - component: {fileID: 2959567819434777604}
   - component: {fileID: 1752751784489406003}
   - component: {fileID: 3046904988736553807}
-  - component: {fileID: 1987453094544726295}
   m_Layer: 0
   m_Name: Floor_Stone (51)
   m_TagString: Untagged
@@ -628,19 +586,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1987453094544726295
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567333646536108666}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &616281301139446905
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 616281302516160398}
+  - component: {fileID: 587874677242417339}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -821,6 +767,19 @@ Transform:
   m_Father: {fileID: 2652333654017114730}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &587874677242417339
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616281302516160399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.949501, y: 0.19013166, z: 12.001071}
+  m_Center: {x: 2.9887104, y: 0.0021960735, z: 2.9545264}
 --- !u!1 &655656537421420236
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +791,6 @@ GameObject:
   - component: {fileID: 6867850168199946989}
   - component: {fileID: 6370255058254695296}
   - component: {fileID: 7311703757125993300}
-  - component: {fileID: 3035374576923058271}
   m_Layer: 0
   m_Name: Floor_Stone (39)
   m_TagString: Untagged
@@ -901,19 +859,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3035374576923058271
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655656537421420236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &743896869902665693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +963,6 @@ GameObject:
   - component: {fileID: 8509111148255694595}
   - component: {fileID: 8735840455220878184}
   - component: {fileID: 8913834995007143582}
-  - component: {fileID: 6680811500820004803}
   m_Layer: 0
   m_Name: Floor_Stone (31)
   m_TagString: Untagged
@@ -1087,19 +1031,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6680811500820004803
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822676728559504175}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &875305622933113844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,7 +1042,6 @@ GameObject:
   - component: {fileID: 2460800421157911558}
   - component: {fileID: 7089543770068285795}
   - component: {fileID: 1288566667041698487}
-  - component: {fileID: 3887047534532064912}
   m_Layer: 0
   m_Name: Floor_Stone (25)
   m_TagString: Untagged
@@ -1180,19 +1110,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3887047534532064912
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875305622933113844}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &951212768273902172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1214,6 @@ GameObject:
   - component: {fileID: 4192434122059910929}
   - component: {fileID: 1031805063240686238}
   - component: {fileID: 349989670037345986}
-  - component: {fileID: 1381590647697243073}
   m_Layer: 0
   m_Name: Floor_Stone (23)
   m_TagString: Untagged
@@ -1366,19 +1282,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1381590647697243073
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014719385393568995}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &1208810986579090124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1293,6 @@ GameObject:
   - component: {fileID: 4877460247077885563}
   - component: {fileID: 2938364706138799040}
   - component: {fileID: 2789119902686411178}
-  - component: {fileID: 1144437241977837203}
   m_Layer: 0
   m_Name: Floor_Stone (28)
   m_TagString: Untagged
@@ -1459,19 +1361,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1144437241977837203
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208810986579090124}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &1252878612177441550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,7 +1372,6 @@ GameObject:
   - component: {fileID: 7615982767144685248}
   - component: {fileID: 560950111355961468}
   - component: {fileID: 3102053153193882888}
-  - component: {fileID: 4312014545508004747}
   m_Layer: 0
   m_Name: Floor_Stone (44)
   m_TagString: Untagged
@@ -1552,19 +1440,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4312014545508004747
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252878612177441550}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &1394725541624568331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,7 +1544,6 @@ GameObject:
   - component: {fileID: 1593502879533347459}
   - component: {fileID: 8128044916944828333}
   - component: {fileID: 7020650811100299324}
-  - component: {fileID: 1617332770907224677}
   m_Layer: 0
   m_Name: Floor_Stone (58)
   m_TagString: Untagged
@@ -1738,19 +1612,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1617332770907224677
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421377272804188427}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &1707093309624276484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1623,6 @@ GameObject:
   - component: {fileID: 1531626176067584998}
   - component: {fileID: 5577609813507324739}
   - component: {fileID: 5084668503120335448}
-  - component: {fileID: 2040032358593708537}
   m_Layer: 0
   m_Name: Floor_Stone (21)
   m_TagString: Untagged
@@ -1831,19 +1691,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2040032358593708537
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707093309624276484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &2277944748888671825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,7 +1702,6 @@ GameObject:
   - component: {fileID: 2572646544619426946}
   - component: {fileID: 3254494954744976094}
   - component: {fileID: 2097105901977694046}
-  - component: {fileID: 4408213816611424010}
   m_Layer: 0
   m_Name: Floor_Stone (29)
   m_TagString: Untagged
@@ -1924,19 +1770,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4408213816611424010
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2277944748888671825}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &2413064483058503284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1781,6 @@ GameObject:
   - component: {fileID: 6066378878771826848}
   - component: {fileID: 938594208396843456}
   - component: {fileID: 5400649446666371567}
-  - component: {fileID: 6651767044013653693}
   m_Layer: 0
   m_Name: Floor_Stone (7)
   m_TagString: Untagged
@@ -2017,19 +1849,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6651767044013653693
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413064483058503284}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &2588655005215825969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,7 +1953,6 @@ GameObject:
   - component: {fileID: 2931529400291084996}
   - component: {fileID: 6589453022580949233}
   - component: {fileID: 8726639000963330413}
-  - component: {fileID: 8806047789890427326}
   m_Layer: 0
   m_Name: Floor_Stone (8)
   m_TagString: Untagged
@@ -2203,19 +2021,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8806047789890427326
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2593133404914644465}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &2604421541643793735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,7 +2032,6 @@ GameObject:
   - component: {fileID: 5274890800763667925}
   - component: {fileID: 8012703591020346325}
   - component: {fileID: 6629335262069787835}
-  - component: {fileID: 6675173567098463267}
   m_Layer: 0
   m_Name: Floor_Stone (15)
   m_TagString: Untagged
@@ -2296,19 +2100,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6675173567098463267
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2604421541643793735}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &2652777725723076377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,7 +2204,6 @@ GameObject:
   - component: {fileID: 6403788313999686115}
   - component: {fileID: 5432442157473996227}
   - component: {fileID: 4072031322798772020}
-  - component: {fileID: 4333710326582858073}
   m_Layer: 0
   m_Name: Floor_Stone (14)
   m_TagString: Untagged
@@ -2482,19 +2272,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4333710326582858073
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2676388398750532977}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &2685668977995140409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,7 +2562,6 @@ GameObject:
   - component: {fileID: 7589492196134075108}
   - component: {fileID: 6744994597265010520}
   - component: {fileID: 4893481601395594778}
-  - component: {fileID: 5095277072536756654}
   m_Layer: 0
   m_Name: Floor_Stone (4)
   m_TagString: Untagged
@@ -2854,19 +2630,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5095277072536756654
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2997488563730476057}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &3062516215568796413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,7 +2641,6 @@ GameObject:
   - component: {fileID: 8065765351957254433}
   - component: {fileID: 7764101926485071991}
   - component: {fileID: 5785770258257755675}
-  - component: {fileID: 6965589254208228168}
   m_Layer: 0
   m_Name: Floor_Stone (18)
   m_TagString: Untagged
@@ -2947,19 +2709,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6965589254208228168
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062516215568796413}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &3128751351291220216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,7 +2720,6 @@ GameObject:
   - component: {fileID: 6376783654002243269}
   - component: {fileID: 6363195636145006489}
   - component: {fileID: 3642624087357559883}
-  - component: {fileID: 4632826050962995023}
   m_Layer: 0
   m_Name: Floor_Stone (59)
   m_TagString: Untagged
@@ -3040,19 +2788,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4632826050962995023
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3128751351291220216}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &3333232961589250804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,7 +2799,6 @@ GameObject:
   - component: {fileID: 2316565253123316587}
   - component: {fileID: 8703854222035276292}
   - component: {fileID: 7803698254926675353}
-  - component: {fileID: 919289438698238654}
   m_Layer: 0
   m_Name: Floor_Stone (24)
   m_TagString: Untagged
@@ -3133,19 +2867,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &919289438698238654
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3333232961589250804}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &3588931653251128628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3157,7 +2878,6 @@ GameObject:
   - component: {fileID: 756803688680443786}
   - component: {fileID: 281604627717163729}
   - component: {fileID: 67021944913409181}
-  - component: {fileID: 7442583510680730992}
   m_Layer: 0
   m_Name: Floor_Stone (32)
   m_TagString: Untagged
@@ -3226,19 +2946,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7442583510680730992
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3588931653251128628}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &3590514155149573307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,7 +2957,6 @@ GameObject:
   - component: {fileID: 1839245398309430176}
   - component: {fileID: 5313936400635630951}
   - component: {fileID: 6936597642631808649}
-  - component: {fileID: 7908307684144272386}
   m_Layer: 0
   m_Name: Floor_Stone (49)
   m_TagString: Untagged
@@ -3319,19 +3025,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7908307684144272386
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590514155149573307}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &3666019252399187972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,7 +3036,6 @@ GameObject:
   - component: {fileID: 5623058014631749547}
   - component: {fileID: 6640398418589489194}
   - component: {fileID: 6378681112918489894}
-  - component: {fileID: 8984889696927213416}
   m_Layer: 0
   m_Name: Floor_Stone (30)
   m_TagString: Untagged
@@ -3412,19 +3104,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8984889696927213416
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3666019252399187972}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &3686278512378855709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,7 +3115,6 @@ GameObject:
   - component: {fileID: 6218869507429088882}
   - component: {fileID: 8226007602610580778}
   - component: {fileID: 6638775000891451111}
-  - component: {fileID: 377158917773257590}
   m_Layer: 0
   m_Name: Floor_Stone (46)
   m_TagString: Untagged
@@ -3505,19 +3183,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &377158917773257590
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3686278512378855709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &3757021477838180208
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,7 +3287,6 @@ GameObject:
   - component: {fileID: 2690449523625562473}
   - component: {fileID: 4456997258899806010}
   - component: {fileID: 3352494009491271141}
-  - component: {fileID: 5216254573298428763}
   m_Layer: 0
   m_Name: Floor_Stone (56)
   m_TagString: Untagged
@@ -3691,19 +3355,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5216254573298428763
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021255563762252368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &4167174225320240993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3715,7 +3366,6 @@ GameObject:
   - component: {fileID: 8129418989247916660}
   - component: {fileID: 7414548512693331915}
   - component: {fileID: 5934341248311374870}
-  - component: {fileID: 9003693485086274208}
   m_Layer: 0
   m_Name: Floor_Stone (54)
   m_TagString: Untagged
@@ -3784,19 +3434,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9003693485086274208
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167174225320240993}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &4309139902469506220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,7 +3538,6 @@ GameObject:
   - component: {fileID: 3253947890337699167}
   - component: {fileID: 5665271960016204048}
   - component: {fileID: 3912621107170804510}
-  - component: {fileID: 4788766829475519343}
   m_Layer: 0
   m_Name: Floor_Stone (36)
   m_TagString: Untagged
@@ -3970,19 +3606,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4788766829475519343
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4314228806001944391}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &4434847661622205755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4273,7 +3896,6 @@ GameObject:
   - component: {fileID: 1137657930260480639}
   - component: {fileID: 197068536744298476}
   - component: {fileID: 3881002769427179205}
-  - component: {fileID: 192648454984475438}
   m_Layer: 0
   m_Name: Floor_Stone (13)
   m_TagString: Untagged
@@ -4342,19 +3964,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &192648454984475438
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4567816239970500361}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &4595573493461991608
 GameObject:
   m_ObjectHideFlags: 0
@@ -4366,7 +3975,6 @@ GameObject:
   - component: {fileID: 369938917795870753}
   - component: {fileID: 7774429106842501471}
   - component: {fileID: 6793332952670217605}
-  - component: {fileID: 1159295068503724179}
   m_Layer: 0
   m_Name: Floor_Stone (6)
   m_TagString: Untagged
@@ -4435,19 +4043,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1159295068503724179
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595573493461991608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &4653108887065990529
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,7 +4054,6 @@ GameObject:
   - component: {fileID: 3086587025480466781}
   - component: {fileID: 4243582855695964496}
   - component: {fileID: 108453726887096796}
-  - component: {fileID: 2829925720099476700}
   m_Layer: 0
   m_Name: Floor_Stone (19)
   m_TagString: Untagged
@@ -4528,19 +4122,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2829925720099476700
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4653108887065990529}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &4818416681176147472
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,7 +4133,6 @@ GameObject:
   - component: {fileID: 2432500148318087192}
   - component: {fileID: 4372771794789186667}
   - component: {fileID: 1375771472224541760}
-  - component: {fileID: 1600272151050076364}
   m_Layer: 0
   m_Name: Floor_Stone (41)
   m_TagString: Untagged
@@ -4621,19 +4201,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1600272151050076364
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4818416681176147472}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &5151833444688261588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4645,7 +4212,6 @@ GameObject:
   - component: {fileID: 769588471780457025}
   - component: {fileID: 4531761911636103332}
   - component: {fileID: 833590110576975559}
-  - component: {fileID: 6223703995975223839}
   m_Layer: 0
   m_Name: Floor_Stone (1)
   m_TagString: Untagged
@@ -4714,19 +4280,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6223703995975223839
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5151833444688261588}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &5175905349715130400
 GameObject:
   m_ObjectHideFlags: 0
@@ -4831,7 +4384,6 @@ GameObject:
   - component: {fileID: 7366552194679628135}
   - component: {fileID: 5907821419485609099}
   - component: {fileID: 4112571681312674868}
-  - component: {fileID: 2532836052555091452}
   m_Layer: 0
   m_Name: Floor_Stone (16)
   m_TagString: Untagged
@@ -4900,19 +4452,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2532836052555091452
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5213604251346089626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &5411741102764961229
 GameObject:
   m_ObjectHideFlags: 0
@@ -4924,7 +4463,6 @@ GameObject:
   - component: {fileID: 3609707609142626648}
   - component: {fileID: 2730266895062761597}
   - component: {fileID: 4839202296347747362}
-  - component: {fileID: 6988215594211550347}
   m_Layer: 0
   m_Name: Floor_Stone (26)
   m_TagString: Untagged
@@ -4993,19 +4531,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6988215594211550347
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411741102764961229}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &5672676214345026100
 GameObject:
   m_ObjectHideFlags: 0
@@ -5017,7 +4542,6 @@ GameObject:
   - component: {fileID: 2828728293042722726}
   - component: {fileID: 1620516517209608}
   - component: {fileID: 8686013523340516824}
-  - component: {fileID: 8619969771075553155}
   m_Layer: 0
   m_Name: Floor_Stone (38)
   m_TagString: Untagged
@@ -5086,19 +4610,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8619969771075553155
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5672676214345026100}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &5844942784963982232
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,7 +4621,6 @@ GameObject:
   - component: {fileID: 7651224141384682731}
   - component: {fileID: 1995731019434534875}
   - component: {fileID: 8901158275471938442}
-  - component: {fileID: 3986589917513229737}
   m_Layer: 0
   m_Name: Floor_Stone (22)
   m_TagString: Untagged
@@ -5179,19 +4689,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3986589917513229737
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5844942784963982232}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6100978317892568849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5296,7 +4793,6 @@ GameObject:
   - component: {fileID: 6892005028152949712}
   - component: {fileID: 5622162098927220499}
   - component: {fileID: 7158080903889272323}
-  - component: {fileID: 4530610180946547239}
   m_Layer: 0
   m_Name: Floor_Stone
   m_TagString: Untagged
@@ -5365,19 +4861,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4530610180946547239
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6282779573417944818}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6305557178954051786
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,7 +4872,6 @@ GameObject:
   - component: {fileID: 5575908978386579011}
   - component: {fileID: 593517861554298171}
   - component: {fileID: 5566544891104683463}
-  - component: {fileID: 3847135240232927171}
   m_Layer: 0
   m_Name: Floor_Stone (37)
   m_TagString: Untagged
@@ -5458,19 +4940,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3847135240232927171
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6305557178954051786}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6373204709605237347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5575,7 +5044,6 @@ GameObject:
   - component: {fileID: 7796745107373656892}
   - component: {fileID: 7477401705881647843}
   - component: {fileID: 5520905938677471224}
-  - component: {fileID: 4270178066005784821}
   m_Layer: 0
   m_Name: Floor_Stone (20)
   m_TagString: Untagged
@@ -5644,19 +5112,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4270178066005784821
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6469796441653769774}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6532686546250513285
 GameObject:
   m_ObjectHideFlags: 0
@@ -5668,7 +5123,6 @@ GameObject:
   - component: {fileID: 1082313771490872217}
   - component: {fileID: 2622798231857635725}
   - component: {fileID: 7819799828516729286}
-  - component: {fileID: 8109472748648617893}
   m_Layer: 0
   m_Name: Floor_Stone (55)
   m_TagString: Untagged
@@ -5737,19 +5191,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8109472748648617893
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532686546250513285}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6569101768193019136
 GameObject:
   m_ObjectHideFlags: 0
@@ -5761,7 +5202,6 @@ GameObject:
   - component: {fileID: 6910286559076066223}
   - component: {fileID: 6822573762986445543}
   - component: {fileID: 4927096802260543256}
-  - component: {fileID: 5653524793593157708}
   m_Layer: 0
   m_Name: Floor_Stone (34)
   m_TagString: Untagged
@@ -5830,19 +5270,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5653524793593157708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6569101768193019136}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6578486594322978736
 GameObject:
   m_ObjectHideFlags: 0
@@ -5854,7 +5281,6 @@ GameObject:
   - component: {fileID: 7564634152558504437}
   - component: {fileID: 748125553883253406}
   - component: {fileID: 3817981738564466893}
-  - component: {fileID: 1586223940781444078}
   m_Layer: 0
   m_Name: Floor_Stone (11)
   m_TagString: Untagged
@@ -5923,19 +5349,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1586223940781444078
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6578486594322978736}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6608910942324502361
 GameObject:
   m_ObjectHideFlags: 0
@@ -5947,7 +5360,6 @@ GameObject:
   - component: {fileID: 5673235049785528671}
   - component: {fileID: 8065456181331454950}
   - component: {fileID: 3417215929696161052}
-  - component: {fileID: 4814463092933956292}
   m_Layer: 0
   m_Name: Floor_Stone (5)
   m_TagString: Untagged
@@ -6016,19 +5428,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4814463092933956292
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6608910942324502361}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6805579187077755933
 GameObject:
   m_ObjectHideFlags: 0
@@ -6040,7 +5439,6 @@ GameObject:
   - component: {fileID: 6124682883096568270}
   - component: {fileID: 2385594241192651199}
   - component: {fileID: 3769612911910808226}
-  - component: {fileID: 6131394777626970899}
   m_Layer: 0
   m_Name: Floor_Stone (43)
   m_TagString: Untagged
@@ -6109,19 +5507,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6131394777626970899
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6805579187077755933}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6842952051718427252
 GameObject:
   m_ObjectHideFlags: 0
@@ -6226,7 +5611,6 @@ GameObject:
   - component: {fileID: 8100174638025939302}
   - component: {fileID: 2855912972485213021}
   - component: {fileID: 1370604412476775635}
-  - component: {fileID: 1030511815260710849}
   m_Layer: 0
   m_Name: Floor_Stone (48)
   m_TagString: Untagged
@@ -6295,19 +5679,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1030511815260710849
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6938781751111235478}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &6988833583366720814
 GameObject:
   m_ObjectHideFlags: 0
@@ -6412,7 +5783,6 @@ GameObject:
   - component: {fileID: 650760694487007711}
   - component: {fileID: 6639389329259958117}
   - component: {fileID: 248655159233357067}
-  - component: {fileID: 3670519544828678279}
   m_Layer: 0
   m_Name: Floor_Stone (9)
   m_TagString: Untagged
@@ -6481,19 +5851,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3670519544828678279
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7114278556418053707}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &7312715959603943551
 GameObject:
   m_ObjectHideFlags: 0
@@ -6505,7 +5862,6 @@ GameObject:
   - component: {fileID: 3677809095098155386}
   - component: {fileID: 6220312029859273679}
   - component: {fileID: 8383559787713014362}
-  - component: {fileID: 1144441965754130936}
   m_Layer: 0
   m_Name: Floor_Stone (52)
   m_TagString: Untagged
@@ -6574,19 +5930,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1144441965754130936
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7312715959603943551}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &7447139542742522595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,7 +5941,6 @@ GameObject:
   - component: {fileID: 5525504225353852596}
   - component: {fileID: 6001581417358908487}
   - component: {fileID: 6189535637669983519}
-  - component: {fileID: 5109115830820192183}
   m_Layer: 0
   m_Name: Floor_Stone (3)
   m_TagString: Untagged
@@ -6667,19 +6009,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5109115830820192183
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447139542742522595}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &7512343643097431815
 GameObject:
   m_ObjectHideFlags: 0
@@ -6691,7 +6020,6 @@ GameObject:
   - component: {fileID: 8146787150950138830}
   - component: {fileID: 5001990434924278702}
   - component: {fileID: 4539517852662440706}
-  - component: {fileID: 2805634962894135197}
   m_Layer: 0
   m_Name: Floor_Stone (45)
   m_TagString: Untagged
@@ -6760,19 +6088,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2805634962894135197
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7512343643097431815}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &7549094453360337635
 GameObject:
   m_ObjectHideFlags: 0
@@ -6784,7 +6099,6 @@ GameObject:
   - component: {fileID: 2156511995075517669}
   - component: {fileID: 2247349831268843379}
   - component: {fileID: 8790110521576989139}
-  - component: {fileID: 3196348026986919752}
   m_Layer: 0
   m_Name: Floor_Stone (42)
   m_TagString: Untagged
@@ -6853,19 +6167,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3196348026986919752
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7549094453360337635}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &7662364475968094353
 GameObject:
   m_ObjectHideFlags: 0
@@ -6970,7 +6271,6 @@ GameObject:
   - component: {fileID: 219538830056334350}
   - component: {fileID: 8211992779365688841}
   - component: {fileID: 7611155830102493831}
-  - component: {fileID: 3278507812089279291}
   m_Layer: 0
   m_Name: Floor_Stone (40)
   m_TagString: Untagged
@@ -7039,19 +6339,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3278507812089279291
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7707532598464902505}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &7747476536926398147
 GameObject:
   m_ObjectHideFlags: 0
@@ -7063,7 +6350,6 @@ GameObject:
   - component: {fileID: 3042087746810067025}
   - component: {fileID: 6779558153890985800}
   - component: {fileID: 740051084036318764}
-  - component: {fileID: 9120382105617761302}
   m_Layer: 0
   m_Name: Floor_Stone (57)
   m_TagString: Untagged
@@ -7132,19 +6418,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9120382105617761302
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7747476536926398147}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &7993618333547300232
 GameObject:
   m_ObjectHideFlags: 0
@@ -7435,7 +6708,6 @@ GameObject:
   - component: {fileID: 1261882648258073566}
   - component: {fileID: 1851486891473275668}
   - component: {fileID: 1490243305274681988}
-  - component: {fileID: 6192764312657044058}
   m_Layer: 0
   m_Name: Floor_Stone (35)
   m_TagString: Untagged
@@ -7504,19 +6776,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6192764312657044058
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8047610189302608017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &8209425619728130448
 GameObject:
   m_ObjectHideFlags: 0
@@ -7528,7 +6787,6 @@ GameObject:
   - component: {fileID: 9148493499642548257}
   - component: {fileID: 6180475368784640860}
   - component: {fileID: 6302104046868783205}
-  - component: {fileID: 5785900111940944126}
   m_Layer: 0
   m_Name: Floor_Stone (47)
   m_TagString: Untagged
@@ -7597,19 +6855,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5785900111940944126
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8209425619728130448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &8215606949957881982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7993,7 +7238,6 @@ GameObject:
   - component: {fileID: 6083596842672266571}
   - component: {fileID: 5667917323271962451}
   - component: {fileID: 501489663486753134}
-  - component: {fileID: 1917801105112815769}
   m_Layer: 0
   m_Name: Floor_Stone (17)
   m_TagString: Untagged
@@ -8062,19 +7306,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1917801105112815769
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666027612506313269}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &8666370781905856137
 GameObject:
   m_ObjectHideFlags: 0
@@ -8086,7 +7317,6 @@ GameObject:
   - component: {fileID: 6031015412502553188}
   - component: {fileID: 391524076479199831}
   - component: {fileID: 5642650856018752750}
-  - component: {fileID: 9164815089837112443}
   m_Layer: 0
   m_Name: Floor_Stone (33)
   m_TagString: Untagged
@@ -8155,19 +7385,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9164815089837112443
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666370781905856137}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &8729681655067685756
 GameObject:
   m_ObjectHideFlags: 0
@@ -8179,7 +7396,6 @@ GameObject:
   - component: {fileID: 4559011797923609561}
   - component: {fileID: 3093352617639333932}
   - component: {fileID: 3434315049296809223}
-  - component: {fileID: 80125633010248166}
   m_Layer: 0
   m_Name: Floor_Stone (2)
   m_TagString: Untagged
@@ -8248,19 +7464,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &80125633010248166
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8729681655067685756}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &8850929837322852252
 GameObject:
   m_ObjectHideFlags: 0
@@ -8458,7 +7661,6 @@ GameObject:
   - component: {fileID: 275324164838700350}
   - component: {fileID: 5104320489012077364}
   - component: {fileID: 8667190220911143272}
-  - component: {fileID: 896514485466865562}
   m_Layer: 0
   m_Name: Floor_Stone (12)
   m_TagString: Untagged
@@ -8527,19 +7729,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &896514485466865562
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985109459392550902}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}
 --- !u!1 &9109354656991900504
 GameObject:
   m_ObjectHideFlags: 0
@@ -8551,7 +7740,6 @@ GameObject:
   - component: {fileID: 266216668115307176}
   - component: {fileID: 3176902097383585094}
   - component: {fileID: 1198789065214459700}
-  - component: {fileID: 414195224134753767}
   m_Layer: 0
   m_Name: Floor_Stone (27)
   m_TagString: Untagged
@@ -8620,16 +7808,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &414195224134753767
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9109354656991900504}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.002268278}
-  m_Center: {x: -0.000050755738, y: -0.0000031709671, z: -0.0000022194533}

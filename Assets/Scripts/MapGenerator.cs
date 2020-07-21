@@ -25,7 +25,7 @@ public class MapGenerator : MonoBehaviour
     public GameObject endRoomWest;
     public GameObject endRoomNorth;
     public GameObject endRoomSouth;
-    
+
 
     [Header("Level Object")]
     public GameObject levelObject;
@@ -54,7 +54,7 @@ public class MapGenerator : MonoBehaviour
 
     private void Update()
     {
-        
+
 
         // Connect rooms
         if (currentRoom.roomConnected)
@@ -77,7 +77,7 @@ public class MapGenerator : MonoBehaviour
                 Debug.Log("Dungeon finished generating!");
                 dungeonGenerated = true;
                 CheckForCollision();
-                
+
                 if (roomCollision)
                 {
                     Debug.Log("Collision Detected, generating new Dungeon...");
@@ -94,7 +94,7 @@ public class MapGenerator : MonoBehaviour
                         Debug.Log("No end room found, generating new Dungeon...");
                         ResetDungeon();
                     }
-                    
+
                 }
             }
         }
@@ -146,7 +146,7 @@ public class MapGenerator : MonoBehaviour
                 {
                     SpawnRoom(Room.RoomType.HallwayHorizontal, "east");
                 }
-                    
+
 
             }
             else if (currentRoom.roomType != Room.RoomType.StartRoom)
@@ -166,7 +166,7 @@ public class MapGenerator : MonoBehaviour
                             else
                                 SpawnRoom(Room.RoomType.EndEast, "east");
                         }
-                            
+
                         break;
                     case 2:
                         //Check if place is free
@@ -200,9 +200,9 @@ public class MapGenerator : MonoBehaviour
                 else
                 {
                     SpawnRoom(Room.RoomType.HallwayHorizontal, "west");
-                }         
+                }
             }
-            else if(currentRoom.roomType != Room.RoomType.StartRoom)
+            else if (currentRoom.roomType != Room.RoomType.StartRoom)
             {
                 switch (rnd)
                 {
@@ -256,7 +256,7 @@ public class MapGenerator : MonoBehaviour
                 {
                     SpawnRoom(Room.RoomType.HallwayVertical, "north");
                 }
-                    
+
             }
             else if (currentRoom.roomType != Room.RoomType.StartRoom)
             {
@@ -271,7 +271,7 @@ public class MapGenerator : MonoBehaviour
                             if (roomsCreated > startclosingRooms + 5 && endRoomCount == 0)
                             {
                                 SpawnRoom(Room.RoomType.EndRoomNorth, "north");
-                            } 
+                            }
                             else
                                 SpawnRoom(Room.RoomType.EndNorth, "north");
                         }
@@ -311,7 +311,7 @@ public class MapGenerator : MonoBehaviour
                 {
                     SpawnRoom(Room.RoomType.HallwayVertical, "south");
                 }
-                    
+
             }
             else if (currentRoom.roomType != Room.RoomType.StartRoom)
             {
@@ -338,7 +338,7 @@ public class MapGenerator : MonoBehaviour
                         if (bigRoomsCreated < bigRooms)
                         {
                             SpawnRoom(Room.RoomType.BigRoom, "south");
-                        }  
+                        }
                         break;
                 }
             }
@@ -347,7 +347,7 @@ public class MapGenerator : MonoBehaviour
 
     void SpawnRoom(Room.RoomType type, string direction)
     {
-        
+
         Vector3 offset = new Vector3();
 
         switch (type)
@@ -444,10 +444,10 @@ public class MapGenerator : MonoBehaviour
         tempRoomObject.transform.parent = levelObject.transform;
         roomsToConnect.Add(tempRoomObject.GetComponent<Room>());
 
-        
+
         roomsCreated++;
     }
-    
+
 
     void ResetDungeon()
     {

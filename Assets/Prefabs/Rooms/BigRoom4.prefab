@@ -526,6 +526,7 @@ MonoBehaviour:
   southConnected: 0
   westConnected: 0
   roomConnected: 0
+  hasCollided: 0
 --- !u!114 &3608408560593499975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,7 +547,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381553302356898695}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 21.766275, y: 3.3247566, z: 21.741875}

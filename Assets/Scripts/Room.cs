@@ -26,6 +26,7 @@ public class Room : MonoBehaviour
     [Header("Room Connected")]
     public bool roomConnected = false;
 
+    public bool hasCollided = false;
     private void Start()
     {
         if (!northConnection)
