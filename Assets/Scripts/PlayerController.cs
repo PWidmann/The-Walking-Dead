@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
 
     //Movement
     [Header("Movement")]
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public float currentSpeed;
     float velocityY;
 
-    bool canMove = false;
+    public bool canMove = false;
 
 
     Camera cam;
@@ -31,12 +32,13 @@ public class PlayerController : MonoBehaviour
     bool cameraTargetSet = false;
 
 
-    CharacterController controller;
+    public CharacterController controller;
     Animator animator;
 
     void Start()
     {
-
+        if (Instance == null || Instance != this)
+            Instance = this;
         // References
         cam = Camera.main;
         cameraT = cam.transform;
@@ -107,7 +109,7 @@ public class PlayerController : MonoBehaviour
         {
             velocityY = 0;
             animator.SetBool("nearGround", true);
-            canMove = true;
+            
 
             if (cameraTargetSet == false)
             {
@@ -115,19 +117,6 @@ public class PlayerController : MonoBehaviour
                 cameraTargetSet = true;
             }
             
-        }
-
-        
-
-
-    }
-
-    void Jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
-            velocityY = jumpVelocity;
         }
     }
 }

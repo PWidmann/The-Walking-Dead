@@ -654,7 +654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputDir: {x: 0, y: 0}
   velocity: {x: 0, y: 0, z: 0}
-  canMove: 1
   speed: 0
   walkSpeed: 2
   runSpeed: 6
@@ -664,8 +663,7 @@ MonoBehaviour:
   turnSmoothVelocity: 0
   speedSmoothTime: 0.1
   currentSpeed: 0
-  strafeLeft: 0
-  strafeRight: 0
+  canMove: 0
 --- !u!1 &3623195302774006173
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class GameInterface : MonoBehaviour
 {
-    public GameObject mapGeneratorPanel;
+    public static GameInterface Instance;
 
+    public GameObject mapGeneratorPanel;
+    public GameObject welcomeScreen;
+    public GameObject titleImage;
     public GameObject mapCam;
     public GameObject gameCam;
 
 
+    public bool welcomeScreenShown = false;
+
     void Start()
     {
-        
+        if (Instance == null)
+            Instance = this;
+
+        mapGeneratorPanel.SetActive(true);
     }
 
     void Update()
@@ -21,6 +29,16 @@ public class GameInterface : MonoBehaviour
         {
             StartGame();
         }
+
+        if (PlayerController.Instance)
+        {
+            if (!welcomeScreenShown && PlayerController.Instance.controller.isGrounded)
+            {
+                welcomeScreen.SetActive(true);
+                welcomeScreenShown = true;
+            }
+        }
+        
     }
 
     public void StartGame()
@@ -31,5 +49,16 @@ public class GameInterface : MonoBehaviour
         
         MapGenerator.Instance.SpawnPlayer();
         MapGenerator.Instance.levelStarted = true;
+    }
+
+    public void SetCanMove()
+    {
+        PlayerController.Instance.canMove = true;
+        welcomeScreen.SetActive(false);
+    }
+
+    public void ShowWelcomeScreen()
+    {
+        welcomeScreen.SetActive(true);
     }
 }
