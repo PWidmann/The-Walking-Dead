@@ -11,6 +11,7 @@ public class GameInterface : MonoBehaviour
     public GameObject titleImage;
     public GameObject mapCam;
     public GameObject gameCam;
+    public GameObject keyImage;
 
 
     public bool welcomeScreenShown = false;
@@ -38,7 +39,8 @@ public class GameInterface : MonoBehaviour
                 welcomeScreenShown = true;
             }
         }
-        
+
+        ShowKey();
     }
 
     public void StartGame()
@@ -60,5 +62,17 @@ public class GameInterface : MonoBehaviour
     public void ShowWelcomeScreen()
     {
         welcomeScreen.SetActive(true);
+    }
+
+    public void ShowKey()
+    {
+        if (GameManager.HasKey)
+        {
+            keyImage.SetActive(true);
+        }
+        else
+        {
+            keyImage.SetActive(false);
+        }
     }
 }

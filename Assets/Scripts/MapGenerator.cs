@@ -18,6 +18,9 @@ public class MapGenerator : MonoBehaviour
     public GameObject zombiePrefab;
     public GameObject[] zombieSpawns;
 
+    [Header("Key Prefab")]
+    public GameObject key;
+
     [Header("Room Prefabs")]
     public GameObject startRoom;
     public GameObject hallwayHorizontal;
@@ -55,6 +58,7 @@ public class MapGenerator : MonoBehaviour
     private bool navMeshBuilt = false;
     private bool roomCollision = false;
     public bool levelStarted = false;
+    public bool keySpawned = false;
 
     void Start()
     {
@@ -507,6 +511,8 @@ public class MapGenerator : MonoBehaviour
             Instantiate(player, GameObject.Find("PlayerSpawn").transform.position, Quaternion.Euler(0, 90f, 0));
 
             SpawnEnemies();
+
+            SpawnKey();
         }
             
     }
@@ -532,6 +538,34 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
+    }
+
+    void SpawnKey()
+    {
+        if (!keySpawned)
+        {
+            GameObject[] keySpawns = GameObject.FindGameObjectsWithTag("KeySpawn");
+
+            GameObject chosenSpawn = new GameObject();
+
+            foreach (GameObject spawn in keySpawns)
+            {
+                if (chosenSpawn == null)
+                {
+                    chosenSpawn = spawn;
+                }
+                else
+                {
+                    if (Vector3.Distance(Vector3.zero, chosenSpawn.transform.position) < Vector3.Distance(Vector3.zero, spawn.transform.position))
+                    {
+                        chosenSpawn = spawn;
+                    }
+                }
+            }
+
+            Instantiate(key, chosenSpawn.transform.position, Quaternion.Euler(0, 0, 90f));
+            keySpawned = true;
+        }
     }
 
     float GetRoomRotation(int rnd)
