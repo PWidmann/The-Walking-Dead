@@ -563,7 +563,9 @@ public class MapGenerator : MonoBehaviour
                 }
             }
 
-            Instantiate(key, chosenSpawn.transform.position, Quaternion.Euler(0, 0, 90f));
+            GameObject keyObject = Instantiate(key, chosenSpawn.transform.position, Quaternion.Euler(0, 0, 90f));
+            keyObject.transform.parent = levelObject.transform;
+
             keySpawned = true;
         }
     }

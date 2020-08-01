@@ -8978,7 +8978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103698101028784648}
   m_Layer: 0
-  m_Name: WayPoint (1)
+  m_Name: WayPoint1
   m_TagString: WayPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9845,7 +9845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4978076080668227593}
   m_Layer: 0
-  m_Name: WayPoint (2)
+  m_Name: WayPoint2
   m_TagString: WayPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13409,7 +13409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5091719483872932811}
   m_Layer: 0
-  m_Name: WayPoint (3)
+  m_Name: WayPoint3
   m_TagString: WayPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
