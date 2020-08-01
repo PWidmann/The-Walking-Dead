@@ -46,14 +46,14 @@ public class GameInterface : MonoBehaviour
         mapGeneratorPanel.SetActive(false);
         gameCam.SetActive(true);
         mapCam.SetActive(false);
-        
+
+        MapGenerator.Instance.levelMeshSurface.BuildNavMesh();
         MapGenerator.Instance.SpawnPlayer();
         MapGenerator.Instance.levelStarted = true;
     }
 
     public void SetCanMove()
     {
-        PlayerController.Instance.canMove = true;
         welcomeScreen.SetActive(false);
     }
 

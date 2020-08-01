@@ -11,17 +11,19 @@ public class PlayerController : MonoBehaviour
     public Vector2 inputDir;
     public Vector3 velocity;
     
-    public float speed = 0;
-    public float walkSpeed = 2;
-    public float runSpeed = 4;
+    float walkSpeed = 3;
+    float runSpeed = 6;
+    float speed;
+    float currentSpeed;
     public float gravity = -12;
-    public float jumpHeight = 1;
-    public float turnSmoothTime = 0.1f;
-    public float turnSmoothVelocity;
-    public float speedSmoothTime = 0.1f;
+    float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
+    float speedSmoothTime = 0.1f;
     float speedSmoothVelocity;
-    public float currentSpeed;
+    
     float velocityY;
+
+    public Vector3 position;
 
     public bool canMove = false;
 
@@ -42,24 +44,28 @@ public class PlayerController : MonoBehaviour
         // References
         cam = Camera.main;
         cameraT = cam.transform;
-        controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
 
-        speed = walkSpeed;
-
         inputDir = Vector2.zero;
-
-        
+        canMove = true;
+        speed = walkSpeed;
     }
 
     void Update()
     {
-        if (canMove)
+        position = transform.position;
+
+        //Movement
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        inputDir = input.normalized;
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("JoystickButtonA"))
         {
-            //Movement
-            Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            inputDir = input.normalized;
-            
+            speed = runSpeed;
+        }
+        else
+        {
+            speed = walkSpeed;
         }
 
         Move(inputDir);
@@ -67,17 +73,6 @@ public class PlayerController : MonoBehaviour
         // animator
         float animationSpeedPercent = currentSpeed / runSpeed;
         animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("JoystickButtonA"))
-        {
-            speed = runSpeed;
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetButtonUp("JoystickButtonA"))
-        {
-            speed = walkSpeed;
-        }
-
     }
 
     void Move(Vector2 inputDir)
@@ -86,7 +81,7 @@ public class PlayerController : MonoBehaviour
         velocityY += Time.deltaTime * gravity;
 
         //Player rotation
-        if (inputDir != Vector2.zero && canMove)
+        if (canMove && inputDir != Vector2.zero)
         {
             float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
@@ -96,11 +91,13 @@ public class PlayerController : MonoBehaviour
         float targetSpeed = speed * inputDir.magnitude;
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
-
+        
         velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
 
-        
-        controller.Move(velocity * Time.deltaTime);
+        if (canMove)
+        {
+            controller.Move(velocity * Time.deltaTime);
+        }
         currentSpeed = new Vector2(controller.velocity.x, controller.velocity.z).magnitude;
 
 

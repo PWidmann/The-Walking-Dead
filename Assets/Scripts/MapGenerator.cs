@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class MapGenerator : MonoBehaviour
 
     [Header("Player Prefab")]
     public GameObject player;
+
+    [Header("Zombie Prefab")]
+    public GameObject zombiePrefab;
+    public GameObject[] zombieSpawns;
 
     [Header("Room Prefabs")]
     public GameObject startRoom;
@@ -32,6 +37,8 @@ public class MapGenerator : MonoBehaviour
 
     [Header("Level Object")]
     public GameObject levelObject;
+    [HideInInspector]
+    public  NavMeshSurface levelMeshSurface;
     private GameObject tempRoomObject;
 
     public Room currentRoom;
@@ -45,6 +52,7 @@ public class MapGenerator : MonoBehaviour
 
     public List<Bounds> roomList = new List<Bounds>();
     public bool dungeonGenerated = false;
+    private bool navMeshBuilt = false;
     private bool roomCollision = false;
     public bool levelStarted = false;
 
@@ -53,7 +61,7 @@ public class MapGenerator : MonoBehaviour
         if (Instance == null)
             Instance = this;
 
-        //StartGeneratingDungeon();
+        levelMeshSurface = levelObject.GetComponent<NavMeshSurface>();
     }
 
     private void Update()
@@ -61,6 +69,17 @@ public class MapGenerator : MonoBehaviour
 
         if (currentRoom)
         {
+            if (dungeonGenerated)
+            {
+                if (!navMeshBuilt)
+                {
+                    
+                    Debug.Log("Nav mesh built.");
+                    navMeshBuilt = true;
+                }
+                
+            }
+
             // Connect rooms
             if (currentRoom.roomConnected)
             {
@@ -94,6 +113,7 @@ public class MapGenerator : MonoBehaviour
                     if (endRoomCount > 0)
                     {
                         Debug.Log("Generated a valid Dungeon!");
+                        dungeonGenerated = true;
                     }
                     else
                     {
@@ -130,6 +150,16 @@ public class MapGenerator : MonoBehaviour
         bigRoomsCreated = 0;
         dungeonGenerated = false;
         roomCollision = false;
+    }
+
+    void SpawnEnemies()
+    {
+        zombieSpawns = GameObject.FindGameObjectsWithTag("ZombieSpawn");
+
+        foreach (GameObject spawn in zombieSpawns)
+        {
+            Instantiate(zombiePrefab, spawn.transform.position, Quaternion.Euler(0, Random.Range(0, 360), 0));
+        }
     }
 
     void CreateConnection()
@@ -466,13 +496,19 @@ public class MapGenerator : MonoBehaviour
             Destroy(levelObject.transform.GetChild(i).gameObject);
         }
 
+        
         StartGeneratingDungeon();
     }
 
     public void SpawnPlayer()
     {
-        if(!levelStarted)
+        if (navMeshBuilt)
+        {
             Instantiate(player, GameObject.Find("PlayerSpawn").transform.position, Quaternion.Euler(0, 90f, 0));
+
+            SpawnEnemies();
+        }
+            
     }
 
     void CheckForCollision()

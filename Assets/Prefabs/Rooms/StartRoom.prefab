@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4844533228840940004}
   m_Layer: 0
   m_Name: Floor_Stone (53)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 1510431465127099584}
   m_Layer: 0
   m_Name: Floor_Stone (50)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 1702294309550637435}
   m_Layer: 0
   m_Name: Floor_Stone (10)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 3046904988736553807}
   m_Layer: 0
   m_Name: Floor_Stone (51)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 7311703757125993300}
   m_Layer: 0
   m_Name: Floor_Stone (39)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 8913834995007143582}
   m_Layer: 0
   m_Name: Floor_Stone (31)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 1288566667041698487}
   m_Layer: 0
   m_Name: Floor_Stone (25)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1218,7 +1218,7 @@ GameObject:
   - component: {fileID: 349989670037345986}
   m_Layer: 0
   m_Name: Floor_Stone (23)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1297,7 +1297,7 @@ GameObject:
   - component: {fileID: 2789119902686411178}
   m_Layer: 0
   m_Name: Floor_Stone (28)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1376,7 +1376,7 @@ GameObject:
   - component: {fileID: 3102053153193882888}
   m_Layer: 0
   m_Name: Floor_Stone (44)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1548,7 +1548,7 @@ GameObject:
   - component: {fileID: 7020650811100299324}
   m_Layer: 0
   m_Name: Floor_Stone (58)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1627,7 +1627,7 @@ GameObject:
   - component: {fileID: 5084668503120335448}
   m_Layer: 0
   m_Name: Floor_Stone (21)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1706,7 +1706,7 @@ GameObject:
   - component: {fileID: 2097105901977694046}
   m_Layer: 0
   m_Name: Floor_Stone (29)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1785,7 +1785,7 @@ GameObject:
   - component: {fileID: 5400649446666371567}
   m_Layer: 0
   m_Name: Floor_Stone (7)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1957,7 +1957,7 @@ GameObject:
   - component: {fileID: 8726639000963330413}
   m_Layer: 0
   m_Name: Floor_Stone (8)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2036,7 +2036,7 @@ GameObject:
   - component: {fileID: 6629335262069787835}
   m_Layer: 0
   m_Name: Floor_Stone (15)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2208,7 +2208,7 @@ GameObject:
   - component: {fileID: 4072031322798772020}
   m_Layer: 0
   m_Name: Floor_Stone (14)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2566,7 +2566,7 @@ GameObject:
   - component: {fileID: 4893481601395594778}
   m_Layer: 0
   m_Name: Floor_Stone (4)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2645,7 +2645,7 @@ GameObject:
   - component: {fileID: 5785770258257755675}
   m_Layer: 0
   m_Name: Floor_Stone (18)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2724,7 +2724,7 @@ GameObject:
   - component: {fileID: 3642624087357559883}
   m_Layer: 0
   m_Name: Floor_Stone (59)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2803,7 +2803,7 @@ GameObject:
   - component: {fileID: 7803698254926675353}
   m_Layer: 0
   m_Name: Floor_Stone (24)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2882,7 +2882,7 @@ GameObject:
   - component: {fileID: 67021944913409181}
   m_Layer: 0
   m_Name: Floor_Stone (32)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2961,7 +2961,7 @@ GameObject:
   - component: {fileID: 6936597642631808649}
   m_Layer: 0
   m_Name: Floor_Stone (49)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3040,7 +3040,7 @@ GameObject:
   - component: {fileID: 6378681112918489894}
   m_Layer: 0
   m_Name: Floor_Stone (30)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3119,7 +3119,7 @@ GameObject:
   - component: {fileID: 6638775000891451111}
   m_Layer: 0
   m_Name: Floor_Stone (46)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3291,7 +3291,7 @@ GameObject:
   - component: {fileID: 3352494009491271141}
   m_Layer: 0
   m_Name: Floor_Stone (56)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3370,7 +3370,7 @@ GameObject:
   - component: {fileID: 5934341248311374870}
   m_Layer: 0
   m_Name: Floor_Stone (54)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3542,7 +3542,7 @@ GameObject:
   - component: {fileID: 3912621107170804510}
   m_Layer: 0
   m_Name: Floor_Stone (36)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3900,7 +3900,7 @@ GameObject:
   - component: {fileID: 3881002769427179205}
   m_Layer: 0
   m_Name: Floor_Stone (13)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3979,7 +3979,7 @@ GameObject:
   - component: {fileID: 6793332952670217605}
   m_Layer: 0
   m_Name: Floor_Stone (6)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4058,7 +4058,7 @@ GameObject:
   - component: {fileID: 108453726887096796}
   m_Layer: 0
   m_Name: Floor_Stone (19)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4137,7 +4137,7 @@ GameObject:
   - component: {fileID: 1375771472224541760}
   m_Layer: 0
   m_Name: Floor_Stone (41)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4216,7 +4216,7 @@ GameObject:
   - component: {fileID: 833590110576975559}
   m_Layer: 0
   m_Name: Floor_Stone (1)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4388,7 +4388,7 @@ GameObject:
   - component: {fileID: 4112571681312674868}
   m_Layer: 0
   m_Name: Floor_Stone (16)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4467,7 +4467,7 @@ GameObject:
   - component: {fileID: 4839202296347747362}
   m_Layer: 0
   m_Name: Floor_Stone (26)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4546,7 +4546,7 @@ GameObject:
   - component: {fileID: 8686013523340516824}
   m_Layer: 0
   m_Name: Floor_Stone (38)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4625,7 +4625,7 @@ GameObject:
   - component: {fileID: 8901158275471938442}
   m_Layer: 0
   m_Name: Floor_Stone (22)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4797,7 +4797,7 @@ GameObject:
   - component: {fileID: 7158080903889272323}
   m_Layer: 0
   m_Name: Floor_Stone
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4876,7 +4876,7 @@ GameObject:
   - component: {fileID: 5566544891104683463}
   m_Layer: 0
   m_Name: Floor_Stone (37)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5048,7 +5048,7 @@ GameObject:
   - component: {fileID: 5520905938677471224}
   m_Layer: 0
   m_Name: Floor_Stone (20)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5127,7 +5127,7 @@ GameObject:
   - component: {fileID: 7819799828516729286}
   m_Layer: 0
   m_Name: Floor_Stone (55)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5206,7 +5206,7 @@ GameObject:
   - component: {fileID: 4927096802260543256}
   m_Layer: 0
   m_Name: Floor_Stone (34)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5285,7 +5285,7 @@ GameObject:
   - component: {fileID: 3817981738564466893}
   m_Layer: 0
   m_Name: Floor_Stone (11)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5364,7 +5364,7 @@ GameObject:
   - component: {fileID: 3417215929696161052}
   m_Layer: 0
   m_Name: Floor_Stone (5)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5443,7 +5443,7 @@ GameObject:
   - component: {fileID: 3769612911910808226}
   m_Layer: 0
   m_Name: Floor_Stone (43)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5615,7 +5615,7 @@ GameObject:
   - component: {fileID: 1370604412476775635}
   m_Layer: 0
   m_Name: Floor_Stone (48)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5787,7 +5787,7 @@ GameObject:
   - component: {fileID: 248655159233357067}
   m_Layer: 0
   m_Name: Floor_Stone (9)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5866,7 +5866,7 @@ GameObject:
   - component: {fileID: 8383559787713014362}
   m_Layer: 0
   m_Name: Floor_Stone (52)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5945,7 +5945,7 @@ GameObject:
   - component: {fileID: 6189535637669983519}
   m_Layer: 0
   m_Name: Floor_Stone (3)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6024,7 +6024,7 @@ GameObject:
   - component: {fileID: 4539517852662440706}
   m_Layer: 0
   m_Name: Floor_Stone (45)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6103,7 +6103,7 @@ GameObject:
   - component: {fileID: 8790110521576989139}
   m_Layer: 0
   m_Name: Floor_Stone (42)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6275,7 +6275,7 @@ GameObject:
   - component: {fileID: 7611155830102493831}
   m_Layer: 0
   m_Name: Floor_Stone (40)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6354,7 +6354,7 @@ GameObject:
   - component: {fileID: 740051084036318764}
   m_Layer: 0
   m_Name: Floor_Stone (57)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6712,7 +6712,7 @@ GameObject:
   - component: {fileID: 1490243305274681988}
   m_Layer: 0
   m_Name: Floor_Stone (35)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6791,7 +6791,7 @@ GameObject:
   - component: {fileID: 6302104046868783205}
   m_Layer: 0
   m_Name: Floor_Stone (47)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7242,7 +7242,7 @@ GameObject:
   - component: {fileID: 501489663486753134}
   m_Layer: 0
   m_Name: Floor_Stone (17)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7321,7 +7321,7 @@ GameObject:
   - component: {fileID: 5642650856018752750}
   m_Layer: 0
   m_Name: Floor_Stone (33)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7400,7 +7400,7 @@ GameObject:
   - component: {fileID: 3434315049296809223}
   m_Layer: 0
   m_Name: Floor_Stone (2)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7665,7 +7665,7 @@ GameObject:
   - component: {fileID: 8667190220911143272}
   m_Layer: 0
   m_Name: Floor_Stone (12)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7744,7 +7744,7 @@ GameObject:
   - component: {fileID: 1198789065214459700}
   m_Layer: 0
   m_Name: Floor_Stone (27)
-  m_TagString: Untagged
+  m_TagString: NavMeshSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7820,6 +7820,34 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
       propertyPath: m_Name
       value: Torch1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7939,6 +7967,34 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
       propertyPath: m_Name
       value: Torch1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1e5c742accdc1824fb01f98f446fa63c, type: 3}
       propertyPath: m_LocalPosition.x
