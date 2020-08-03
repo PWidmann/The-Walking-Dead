@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -54,13 +55,11 @@ public class EnemyController : MonoBehaviour
             searchedWayPoints = true;
         }
 
-        if (PlayerController.Instance.Alive == false)
-        {
-            animator.SetBool("isAttacking", false);
-            state = State.Eating;
-        }
-
         float distance = Vector3.Distance(target.position, transform.position);
+
+        
+
+        
 
         if (distance <= chaseRadius && distance > attackDistance && PlayerController.Instance.Alive)
         {
@@ -80,9 +79,21 @@ public class EnemyController : MonoBehaviour
             state = State.Idle;
         }
 
-        
+        if (PlayerController.Instance.Alive == false)
+        {
+            if (distance < attackDistance)
+            {
+                animator.SetBool("isAttacking", false);
+                state = State.Eating;
+            }
+            else
+            {
+                state = State.ChaseTarget;
+            }
+            
+        }
 
-            switch (state)
+        switch (state)
         {
             case State.Idle:
                 Idle();

@@ -20,6 +20,7 @@ public class GameInterface : MonoBehaviour
     public GameObject messagePanel;
     public GameObject miniMap;
     public RawImage miniMapImage;
+    public GameObject deathPanel;
 
     private bool welcomeScreenShown = false;
     private bool miniMapActive = false;
@@ -40,8 +41,13 @@ public class GameInterface : MonoBehaviour
             StartGame();
         }
 
+
         if (PlayerController.Instance)
         {
+            // Death Screen
+            if (PlayerController.Instance.Alive == false)
+                deathPanel.SetActive(true);
+
             if (!welcomeScreenShown && PlayerController.Instance.controller.isGrounded)
             {
                 welcomeScreen.SetActive(true);

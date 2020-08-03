@@ -75,4 +75,5 @@ Material:
     m_Colors:
     - _Color: {r: 0.17629308, g: 0.33629715, b: 0.13994707, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OccludedColor: {r: 0.8392157, g: 0.34509805, b: 0.34509805, a: 1}
+    - _OccludedColor: {r: 1, g: 0.1830188, b: 0.1830188, a: 1}
+  m_BuildTextureStacks: []
