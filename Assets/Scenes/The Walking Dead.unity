@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34215a6d8fb054aba33e36b49172b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniMapAlpha: 0.5
+  miniMapAlpha: 0.36
   mapGeneratorPanel: {fileID: 608039036}
   welcomeScreen: {fileID: 317259594}
   titleImage: {fileID: 1830880903}
