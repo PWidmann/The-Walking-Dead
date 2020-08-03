@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    private enum State { idle, pathing, chaseTarget };
+    private enum State { Idle, Pathing, ChaseTarget, Attacking, Eating };
     private State state;
     
     public float chaseRadius = 10f;
+    public float attackDistance = 2f;
     public float idleTime = 3f;
     private float timer = 0f;
 
@@ -27,9 +29,9 @@ public class EnemyController : MonoBehaviour
 
     private float targetSpeed;
     private float currentSpeed;
-    float speedSmoothTime = 0.3f;
+    float speedSmoothTime = 0.2f;
     float speedSmoothVelocity;
-    float extraRotationSpeed = 3;
+    float extraRotationSpeed = 5;
 
     void Start()
     {
@@ -37,7 +39,7 @@ public class EnemyController : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponentInChildren<Animator>();
         
-        state = State.pathing;
+        state = State.Pathing;
 
 
         targetSpeed = 1f;
@@ -53,43 +55,62 @@ public class EnemyController : MonoBehaviour
             searchedWayPoints = true;
         }
 
-        extraRotation();
+        if (PlayerController.Instance.Alive == false)
+        {
+            animator.SetBool("isAttacking", false);
+            state = State.Eating;
+        }
 
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= chaseRadius)
+        if (distance <= chaseRadius && distance > attackDistance && PlayerController.Instance.Alive)
         {
-            state = State.chaseTarget;
+            state = State.ChaseTarget;
         }
 
-        if (state == State.chaseTarget && distance > chaseRadius)
+        
+
+        if (distance <= attackDistance && PlayerController.Instance.Alive)
+        {
+            state = State.Attacking;
+        }
+
+        if (state == State.ChaseTarget && distance > chaseRadius)
         {
             agent.isStopped = true;
-            state = State.idle;
+            state = State.Idle;
         }
+
+        
 
             switch (state)
         {
-            case State.idle:
+            case State.Idle:
                 Idle();
                 break;
-            case State.pathing:
+            case State.Pathing:
                 Pathing();
                 break;
-            case State.chaseTarget:
+            case State.ChaseTarget:
                 ChaseTarget();
+                break;
+            case State.Attacking:
+                Attacking();
+                break;
+            case State.Eating:
+                Eating();
                 break;
         }
 
-        if (distance <= agent.stoppingDistance)
+        if (distance <= attackDistance)
         {
-            FaceTarget();
+            FaceTarget(PlayerController.Instance.position);
         }
 
-        // Animation
-        //animator.SetFloat("speedPercent", new Vector2(agent.velocity.x, agent.velocity.z).magnitude);
+        extraRotation();
     }
 
+    // Search waypoints at the start of the game
     void SearchWayPoints()
     {
         GameObject[] foundWayPoints = GameObject.FindGameObjectsWithTag("WayPoint");
@@ -135,77 +156,116 @@ public class EnemyController : MonoBehaviour
 
     void Idle()
     {
-        targetSpeed = 0;
-        currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
-        agent.speed = currentSpeed;
+        animator.SetBool("isAttacking", false);
 
-        float animationSpeedPercent = currentSpeed / 4f;
-        animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
-
-        timer += Time.deltaTime;
-        if (timer > idleTime)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walking"))
         {
-            timer = 0;
-            state = State.pathing;
-            agent.isStopped = false;
+            targetSpeed = 0;
+            currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
+            agent.speed = currentSpeed;
+
+            float animationSpeedPercent = currentSpeed / 4f;
+            animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+
+            timer += Time.deltaTime;
+            if (timer > idleTime)
+            {
+                timer = 0;
+                state = State.Pathing;
+                agent.isStopped = false;
+            }
         }
     }
 
     void Pathing()
     {
-        
-        targetSpeed = 1f;
-        currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
-        agent.speed = currentSpeed;
+        animator.SetBool("isAttacking", false);
+        agent.isStopped = false;
 
-        float animationSpeedPercent = currentSpeed / 4f;
-        animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+        Vector3 direction = (pathWayPoints[currentWayPoint].transform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 6f);
 
-        
-        agent.SetDestination(pathWayPoints[currentWayPoint].transform.position);
-
-        if (Vector3.Distance(transform.position, pathWayPoints[currentWayPoint].transform.position) < 0.2f)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walking"))
         {
-            currentWayPoint++;
+            targetSpeed = 1f;
+            currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
+            agent.speed = currentSpeed;
 
-            if (currentWayPoint >= pathWayPoints.Count)
+            float animationSpeedPercent = currentSpeed / 4f;
+            animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+
+
+            agent.SetDestination(pathWayPoints[currentWayPoint].transform.position);
+
+            if (Vector3.Distance(transform.position, pathWayPoints[currentWayPoint].transform.position) < agent.stoppingDistance)
             {
-                currentWayPoint = 0;
+                currentWayPoint++;
+
+                if (currentWayPoint >= pathWayPoints.Count)
+                {
+                    currentWayPoint = 0;
+                }
             }
         }
     }
 
     void ChaseTarget()
     {
-        
-        targetSpeed = 4f;
-        currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
-        agent.speed = currentSpeed;
-
-        float animationSpeedPercent = currentSpeed / 4f;
-        animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
-
-        
-        animator.SetFloat("speedPercent", 1f);
-        timer = 0;
-        agent.SetDestination(target.position);
         agent.isStopped = false;
+        animator.SetBool("isAttacking", false);
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walking"))
+        {
+            targetSpeed = 4f;
+            currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
+            agent.speed = currentSpeed;
+
+            float animationSpeedPercent = currentSpeed / 4f;
+            animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+
+
+            animator.SetFloat("speedPercent", 1f);
+            timer = 0;
+            agent.SetDestination(target.position);
+            agent.isStopped = false;
+        }
     }
 
-    void FaceTarget()
+    void Attacking()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        FaceTarget(PlayerController.Instance.position);
+        animator.SetBool("isAttacking", true);
+        agent.velocity = Vector3.zero;
+        agent.isStopped = true;
+        agent.speed = 0;
+
+        if (Vector3.Distance(transform.position, PlayerController.Instance.position) < 1f)
+        {
+            PlayerController.Instance.Alive = false;
+        }
     }
 
-    
+    void FaceTarget(Vector3 position)
+    {
+        Vector3 direction = (position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = lookRotation;
+    }
+
+    void Eating()
+    {
+        FaceTarget(PlayerController.Instance.headPosition.transform.position);
+        animator.SetBool("isEating", true);
+    }
 
     void extraRotation()
     {
         Vector3 lookrotation = agent.steeringTarget - transform.position;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), extraRotationSpeed * Time.deltaTime);
-
+        
+        if(lookrotation != Vector3.zero)
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), extraRotationSpeed * Time.deltaTime);
     }
 
     private void OnDrawGizmosSelected()

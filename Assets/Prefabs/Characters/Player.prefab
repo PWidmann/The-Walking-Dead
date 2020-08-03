@@ -619,6 +619,7 @@ Transform:
   m_Children:
   - {fileID: 3873823088392566976}
   - {fileID: 3623195302774006174}
+  - {fileID: 1461460589775400334}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -654,17 +655,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputDir: {x: 0, y: 0}
   velocity: {x: 0, y: 0, z: 0}
-  speed: 2
-  walkSpeed: 2
-  runSpeed: 6
-  gravity: -10
-  jumpHeight: 1
-  turnSmoothTime: 0.1
-  turnSmoothVelocity: 0
-  speedSmoothTime: 0.15
-  currentSpeed: 0
   position: {x: 0, y: 0, z: 0}
   canMove: 1
+  headPosition: {fileID: 5862254950492453647}
   controller: {fileID: 3623195301241148832}
 --- !u!1 &3623195302774006173
 GameObject:
@@ -1112,6 +1105,36 @@ Transform:
   - {fileID: 7765527193911308165}
   m_Father: {fileID: 5870035756225247734}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5862254950492453647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461460589775400334}
+  m_Layer: 2
+  m_Name: HeadPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461460589775400334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862254950492453647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.905, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3623195301241148847}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6129246751613934671
 GameObject:

@@ -15,11 +15,12 @@ public class PlayerController : MonoBehaviour
     float runSpeed = 6;
     float speed;
     float currentSpeed;
-    public float gravity = -12;
+    float gravity = -12;
     float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     float speedSmoothTime = 0.1f;
     float speedSmoothVelocity;
+    bool alive = true;
     
     float velocityY;
 
@@ -27,15 +28,16 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = false;
 
-
+    public GameObject headPosition;
     Camera cam;
     Transform cameraT;
-    Transform cameraTarget;
     bool cameraTargetSet = false;
 
 
     public CharacterController controller;
     Animator animator;
+
+    public bool Alive { get => alive; set => alive = value; }
 
     void Start()
     {
@@ -53,26 +55,33 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        position = transform.position;
-
-        //Movement
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        inputDir = input.normalized;
-
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("JoystickButtonA"))
+        if (Alive)
         {
-            speed = runSpeed;
+            position = transform.position;
+
+            //Movement
+            Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            inputDir = input.normalized;
+
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("JoystickButtonA"))
+            {
+                speed = runSpeed;
+            }
+            else
+            {
+                speed = walkSpeed;
+            }
+
+            Move(inputDir);
+
+            // animator
+            float animationSpeedPercent = currentSpeed / runSpeed;
+            animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
         }
         else
         {
-            speed = walkSpeed;
+            animator.SetBool("isDeath", true);
         }
-
-        Move(inputDir);
-
-        // animator
-        float animationSpeedPercent = currentSpeed / runSpeed;
-        animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
     }
 
     void Move(Vector2 inputDir)

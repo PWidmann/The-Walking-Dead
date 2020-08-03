@@ -27,12 +27,18 @@ public class KeyDoor : MonoBehaviour
             {
                 locked = false;
             }
+
+            if (!GameManager.HasKey && Vector3.Distance(PlayerController.Instance.transform.position, transform.position) < 2f && doorOpened == false)
+            {
+                GameInterface.Instance.ShowMessage("The door is locked. You need a key.");
+            }
         }
         
 
         if (locked == false && doorOpened == false)
         {
             animator.SetBool("openDoor", true);
+            GameInterface.Instance.ShowMessage("Door unlocked.");
             doorOpened = true;
             GameManager.HasKey = false;
         }

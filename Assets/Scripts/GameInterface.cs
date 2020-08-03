@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameInterface : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class GameInterface : MonoBehaviour
     public GameObject mapCam;
     public GameObject gameCam;
     public GameObject keyImage;
-
+    public GameObject messagePanel;
+    
 
     public bool welcomeScreenShown = false;
 
@@ -41,6 +43,11 @@ public class GameInterface : MonoBehaviour
         }
 
         ShowKey();
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ShowMessage("You need a key!");
+        }
     }
 
     public void StartGame()
@@ -73,6 +80,15 @@ public class GameInterface : MonoBehaviour
         else
         {
             keyImage.SetActive(false);
+        }
+    }
+
+    public void ShowMessage(string message)
+    {
+        if (message != null)
+        {
+            messagePanel.SetActive(true);
+            messagePanel.GetComponent<Message>().ShowMessage(message);
         }
     }
 }
