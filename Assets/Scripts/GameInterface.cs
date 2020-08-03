@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class GameInterface : MonoBehaviour
 {
     public static GameInterface Instance;
+
+    [Range(0, 1)]
+    public float miniMapAlpha;
 
     public GameObject mapGeneratorPanel;
     public GameObject welcomeScreen;
@@ -14,9 +18,12 @@ public class GameInterface : MonoBehaviour
     public GameObject gameCam;
     public GameObject keyImage;
     public GameObject messagePanel;
-    
+    public GameObject miniMap;
+    public RawImage miniMapImage;
 
-    public bool welcomeScreenShown = false;
+    private bool welcomeScreenShown = false;
+    private bool miniMapActive = false;
+
 
     void Start()
     {
@@ -43,11 +50,7 @@ public class GameInterface : MonoBehaviour
         }
 
         ShowKey();
-
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            ShowMessage("You need a key!");
-        }
+        MiniMap();
     }
 
     public void StartGame()
@@ -59,6 +62,7 @@ public class GameInterface : MonoBehaviour
         MapGenerator.Instance.levelMeshSurface.BuildNavMesh();
         MapGenerator.Instance.SpawnPlayer();
         MapGenerator.Instance.levelStarted = true;
+        GameManager.LevelStarted = true;
     }
 
     public void SetCanMove()
@@ -71,6 +75,22 @@ public class GameInterface : MonoBehaviour
         welcomeScreen.SetActive(true);
     }
 
+    public void MiniMap()
+    {
+        SetImageAlpha();
+
+        if (GameManager.LevelStarted)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.M) || Input.GetButtonDown("JoystickButtonY"))
+                miniMapActive = !miniMapActive;
+
+            if (miniMapActive)
+                miniMap.SetActive(true);
+            else
+                miniMap.SetActive(false);
+        }
+    }
+
     public void ShowKey()
     {
         if (GameManager.HasKey)
@@ -81,6 +101,13 @@ public class GameInterface : MonoBehaviour
         {
             keyImage.SetActive(false);
         }
+    }
+
+    public void SetImageAlpha()
+    {
+        var tempColor = miniMapImage.color;
+        tempColor.a = miniMapAlpha;
+        miniMapImage.color = tempColor;
     }
 
     public void ShowMessage(string message)

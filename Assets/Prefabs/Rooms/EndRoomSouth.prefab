@@ -4941,7 +4941,6 @@ GameObject:
   - component: {fileID: 8643985959885712122}
   - component: {fileID: 66769726072034521}
   - component: {fileID: 1277991946452807141}
-  - component: {fileID: 6782168806032393134}
   m_Layer: 0
   m_Name: EndRoomSouth
   m_TagString: Room
@@ -5015,18 +5014,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.422012, y: 3.154543, z: 10.609233}
   m_Center: {x: 2.9328423, y: 1.3924379, z: 3.1052003}
---- !u!114 &6782168806032393134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7324126143060516383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262fc7bbc27dc1a48948893dae8c817c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7485449950455453997
 GameObject:
   m_ObjectHideFlags: 0
