@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class EndTrigger : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public float triggerRadius = 1f;
+
+    private float distance = 100;
+
+    private void Update()
     {
-        Debug.Log("You have escaped the dungeon!");
-        PlayerController.Instance.canMove = false;
+        if (PlayerController.Instance)
+        {
+            distance = Vector3.Distance(transform.position, PlayerController.Instance.position);
+        }
+
+        if (distance < triggerRadius)
+        {
+            GameManager.EndReached = true;
+        }
     }
 }

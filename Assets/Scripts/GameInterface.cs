@@ -24,6 +24,9 @@ public class GameInterface : MonoBehaviour
 
     private bool welcomeScreenShown = false;
     private bool miniMapActive = false;
+    private Vector3 respawnPosition;
+    private GameObject player;
+
 
 
     void Start()
@@ -32,6 +35,13 @@ public class GameInterface : MonoBehaviour
             Instance = this;
 
         mapGeneratorPanel.SetActive(true);
+
+        if (GameManager.LevelStarted)
+        {
+            respawnPosition = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+            
+        }
+            
 
         if (PlayerPrefs.HasKey("MiniMapAlpha"))
         {
@@ -63,7 +73,22 @@ public class GameInterface : MonoBehaviour
         {
             // Death Screen
             if (PlayerController.Instance.Alive == false)
+            {
+                
+
                 deathPanel.SetActive(true);
+
+                //Reset player to start
+                if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("JoystickButtonB"))
+                {
+                    Debug.Log("Resetting player...");
+                    PlayerController.Instance.Alive = true;
+                    
+                    player = GameObject.FindGameObjectWithTag("Player");
+                    player.transform.position = respawnPosition;
+                }
+            }
+                
 
             if (!welcomeScreenShown && PlayerController.Instance.controller.isGrounded)
             {

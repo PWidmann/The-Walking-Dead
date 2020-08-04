@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Alive)
         {
+            animator.SetBool("isDeath", false);
             position = transform.position;
 
             if (!GameManager.IsInPauseMenu)
