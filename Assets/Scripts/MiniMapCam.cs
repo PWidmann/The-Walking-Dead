@@ -9,6 +9,7 @@ public class MiniMapCam : MonoBehaviour
 
     private void Update()
     {
+        // Waiting for the player at the start, won't be called after that
         if (!targetSet)
         {
             if (GameObject.FindGameObjectWithTag("Player"))

@@ -1,15 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameInterface : MonoBehaviour
 {
     public static GameInterface Instance;
-
-    [Range(0, 1)]
-    public float miniMapAlpha;
 
     public GameObject mapGeneratorPanel;
     public GameObject welcomeScreen;
@@ -21,6 +17,10 @@ public class GameInterface : MonoBehaviour
     public GameObject miniMap;
     public RawImage miniMapImage;
     public GameObject deathPanel;
+    public GameObject pauseMenuPanel;
+    public GameObject pauseText;
+    public Slider miniMapAlphaSlider;
+    public Text miniMapAlphaValueText;
 
     private bool welcomeScreenShown = false;
     private bool miniMapActive = false;
@@ -32,6 +32,11 @@ public class GameInterface : MonoBehaviour
             Instance = this;
 
         mapGeneratorPanel.SetActive(true);
+
+        if (PlayerPrefs.HasKey("MiniMapAlpha"))
+        {
+            miniMapAlphaSlider.value = PlayerPrefs.GetFloat("MiniMapAlpha");
+        }
     }
 
     void Update()
@@ -39,6 +44,18 @@ public class GameInterface : MonoBehaviour
         if (Input.GetButtonDown("JoystickButtonA") && !MapGenerator.Instance.levelStarted)
         {
             StartGame();
+        }
+
+        // Escape Menu
+        if (GameManager.LevelStarted && Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.IsInPauseMenu = !GameManager.IsInPauseMenu;
+            
+            if (!GameManager.IsInPauseMenu)
+            {
+                PlayerPrefs.SetFloat("SoundVolume", GameManager.SoundVolume);
+                PlayerPrefs.SetFloat("MiniMapAlpha", GameManager.MiniMapAlpha);
+            }
         }
 
 
@@ -57,6 +74,7 @@ public class GameInterface : MonoBehaviour
 
         ShowKey();
         MiniMap();
+        PauseMenu();
     }
 
     public void StartGame()
@@ -112,7 +130,7 @@ public class GameInterface : MonoBehaviour
     public void SetImageAlpha()
     {
         var tempColor = miniMapImage.color;
-        tempColor.a = miniMapAlpha;
+        tempColor.a = GameManager.MiniMapAlpha;
         miniMapImage.color = tempColor;
     }
 
@@ -123,5 +141,40 @@ public class GameInterface : MonoBehaviour
             messagePanel.SetActive(true);
             messagePanel.GetComponent<Message>().ShowMessage(message);
         }
+    }
+
+    void PauseMenu()
+    {
+        if (GameManager.IsInPauseMenu)
+        {
+            GameManager.MiniMapAlpha = miniMapAlphaSlider.value;
+            miniMapAlphaValueText.text = System.Math.Round(GameManager.MiniMapAlpha, 2).ToString();
+
+            pauseMenuPanel.SetActive(true);
+            pauseText.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            pauseMenuPanel.SetActive(false);
+            pauseText.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(0);
+        GameManager.IsInPauseMenu = false;
+    }
+
+    public void ContinueGame()
+    {
+        GameManager.IsInPauseMenu = false;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -59,9 +59,12 @@ public class PlayerController : MonoBehaviour
         {
             position = transform.position;
 
-            //Movement
-            Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            inputDir = input.normalized;
+            if (!GameManager.IsInPauseMenu)
+            {
+                //Movement
+                Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                inputDir = input.normalized;
+            }
 
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("JoystickButtonA"))
             {
