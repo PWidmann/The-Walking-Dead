@@ -517,6 +517,11 @@ public class MapGenerator : MonoBehaviour
             
     }
 
+    public void RespawnPlayer()
+    {
+        Instantiate(player, GameObject.Find("PlayerSpawn").transform.position, Quaternion.Euler(0, 90f, 0));
+    }
+
     void CheckForCollision()
     {
         foreach (Transform child in levelObject.transform)

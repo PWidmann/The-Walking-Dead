@@ -18,6 +18,7 @@ public class EndTrigger : MonoBehaviour
         if (distance < triggerRadius)
         {
             GameManager.EndReached = true;
+            Debug.Log("End Reached");
         }
     }
 }

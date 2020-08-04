@@ -54,10 +54,12 @@ public class EnemyController : MonoBehaviour
             searchedWayPoints = true;
         }
 
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distance = 100f;
 
-        
-
+        if (target != null)
+        {
+            distance = Vector3.Distance(target.position, transform.position);
+        }
         
 
         if (distance <= chaseRadius && distance > attackDistance && PlayerController.Instance.Alive)
@@ -78,7 +80,7 @@ public class EnemyController : MonoBehaviour
             state = State.Idle;
         }
 
-        if (PlayerController.Instance.Alive == false)
+        if (PlayerController.Instance.Alive == false && GameManager.ResetEnemies == false)
         {
             if (distance < attackDistance)
             {
@@ -88,9 +90,17 @@ public class EnemyController : MonoBehaviour
             else
             {
                 state = State.ChaseTarget;
+                animator.SetBool("isEating", false);
             }
-            
         }
+
+        if (GameManager.ResetEnemies)
+        {
+            state = State.Pathing;
+            animator.SetBool("isEating", false);
+            FindPlayer();
+        }
+            
 
         switch (state)
         {
@@ -275,6 +285,11 @@ public class EnemyController : MonoBehaviour
         
         if(lookrotation != Vector3.zero)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), extraRotationSpeed * Time.deltaTime);
+    }
+
+    public void FindPlayer()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void OnDrawGizmosSelected()

@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class MiniMapCam : MonoBehaviour
 {
-    Transform target;
+    public static MiniMapCam Instance;
+
+    public Transform target;
     bool targetSet = false;
+
+    private void Start()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
 
     private void Update()
     {
-        // Waiting for the player at the start, won't be called after that
+        
         if (!targetSet)
         {
-            if (GameObject.FindGameObjectWithTag("Player"))
-            {
-                target = GameObject.FindGameObjectWithTag("Player").transform;
-                targetSet = true;
-            }
+            FindPlayer();
         }
     }
 
@@ -24,5 +28,14 @@ public class MiniMapCam : MonoBehaviour
     {
         if (target)
             transform.position = target.position - transform.forward * 20;
+    }
+
+    public void FindPlayer()
+    {
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+            targetSet = true;
+        }
     }
 }

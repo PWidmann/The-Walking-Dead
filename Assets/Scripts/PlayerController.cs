@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 
     //Movement
     [Header("Movement")]
-    public Vector2 inputDir;
-    public Vector3 velocity;
+    private Vector2 inputDir;
+    private Vector3 velocity;
     
     float walkSpeed = 3;
     float runSpeed = 6;
@@ -119,7 +119,8 @@ public class PlayerController : MonoBehaviour
         {
             velocityY = 0;
             animator.SetBool("nearGround", true);
-            
+            GameManager.ResetEnemies = false;
+            MiniMapCam.Instance.FindPlayer();
 
             if (cameraTargetSet == false)
             {

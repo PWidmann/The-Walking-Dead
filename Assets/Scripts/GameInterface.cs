@@ -82,18 +82,20 @@ public class GameInterface : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("JoystickButtonB"))
                 {
                     Debug.Log("Resetting player...");
-                    PlayerController.Instance.Alive = true;
-                    
+                    GameManager.ResetEnemies = true;
                     player = GameObject.FindGameObjectWithTag("Player");
-                    player.transform.position = respawnPosition;
+                    Destroy(player);
+                    MapGenerator.Instance.RespawnPlayer();
+                    MiniMapCam.Instance.FindPlayer();
+                    deathPanel.SetActive(false);
                 }
             }
                 
-
+            // Welcome Screen
             if (!welcomeScreenShown && PlayerController.Instance.controller.isGrounded)
             {
-                welcomeScreen.SetActive(true);
-                welcomeScreenShown = true;
+                //welcomeScreen.SetActive(true);
+                //welcomeScreenShown = true;
             }
         }
 

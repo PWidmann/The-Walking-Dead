@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private static float miniMapAlpha = 0.5f;
     private static bool isInPauseMenu = false;
     private static bool endReached = false;
+    private static bool resetEnemies = false;
 
     public static bool MapGenerated { get => mapGenerated; set => mapGenerated = value; }
     public static bool HasKey { get => hasKey; set => hasKey = value; }
@@ -19,4 +20,5 @@ public class GameManager : MonoBehaviour
     public static bool IsInPauseMenu { get => isInPauseMenu; set => isInPauseMenu = value; }
     public static float MiniMapAlpha { get => miniMapAlpha; set => miniMapAlpha = value; }
     public static bool EndReached { get => endReached; set => endReached = value; }
+    public static bool ResetEnemies { get => resetEnemies; set => resetEnemies = value; }
 }
