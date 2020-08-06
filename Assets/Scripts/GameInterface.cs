@@ -15,6 +15,7 @@ public class GameInterface : MonoBehaviour
     public GameObject keyImage;
     public GameObject messagePanel;
     public GameObject miniMap;
+    public Camera miniMapCam;
     public RawImage miniMapImage;
     public GameObject deathPanel;
     public GameObject winScreen;
@@ -114,9 +115,15 @@ public class GameInterface : MonoBehaviour
                 miniMapActive = !miniMapActive;
 
             if (miniMapActive)
+            {
                 miniMap.SetActive(true);
+                miniMapCam.enabled = true;
+            }
             else
+            {
                 miniMap.SetActive(false);
+                miniMapCam.enabled = false;
+            }
         }
     }
 

@@ -5,19 +5,16 @@ using UnityEngine;
 public class KeyDoor : MonoBehaviour
 {
     public GameObject doorObject;
-    
 
     private bool locked = true;
     private bool doorOpened = false;
 
     Animator animator;
-
     
     void Start()
     {
         animator = doorObject.GetComponent<Animator>();    
     }
-
     
     void Update()
     {

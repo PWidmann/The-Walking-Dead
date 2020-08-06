@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private static bool levelStarted = false;
     private static bool welcomeScreen = false;
     private static float soundVolume = 0.5f;
-    private static float miniMapAlpha = 0.35f;
+    private static float miniMapAlpha = 0.5f;
     private static bool isInPauseMenu = false;
     private static bool endReached = false;
     private static bool resetEnemies = false;

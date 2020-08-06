@@ -7,7 +7,6 @@ public class MiniMapCam : MonoBehaviour
     public static MiniMapCam Instance;
 
     public Transform target;
-    bool targetSet = false;
 
     private void Start()
     {
@@ -18,7 +17,7 @@ public class MiniMapCam : MonoBehaviour
     private void Update()
     {
         
-        if (!targetSet)
+        if (target == null)
         {
             FindPlayer();
         }
@@ -35,7 +34,6 @@ public class MiniMapCam : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player"))
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
-            targetSet = true;
         }
     }
 }

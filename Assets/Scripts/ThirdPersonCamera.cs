@@ -28,9 +28,6 @@ public class ThirdPersonCamera : MonoBehaviour
     float yaw = 45f;
     // Up / Down
     float pitch = 40f;
-    
-    
-
 
     private void Start()
     {
@@ -39,20 +36,10 @@ public class ThirdPersonCamera : MonoBehaviour
         currentDistanceFromTarget = maxDistanceFromTarget;
     }
 
-    private void Update()
-    {
-        
-    }
-
     void LateUpdate()
     {
         if (true)
         {
-            //yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
-            //pitch += Input.GetAxis("Mouse Y") * mouseSensitivity * -1;
-            //pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
-
-
             currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
             transform.eulerAngles = currentRotation;
             
@@ -60,8 +47,4 @@ public class ThirdPersonCamera : MonoBehaviour
                 transform.position = target.position - transform.forward * currentDistanceFromTarget;
         }
     }
-
-    
-
-
 }

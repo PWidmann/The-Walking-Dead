@@ -101,25 +101,21 @@ public class MapGenerator : MonoBehaviour
         {
             if (dungeonGenerated == false)
             {
-                Debug.Log("Dungeon finished generating!");
                 dungeonGenerated = true;
                 CheckForCollision();
 
                 if (roomCollision)
                 {
-                    Debug.Log("Collision Detected, generating new Dungeon...");
                     ResetDungeon();
                 }
                 else
                 {
                     if (endRoomCount > 0)
                     {
-                        Debug.Log("Generated a valid Dungeon!");
                         dungeonGenerated = true;
                     }
                     else
                     {
-                        Debug.Log("No end room found, generating new Dungeon...");
                         ResetDungeon();
                     }
                 }

@@ -15,7 +15,7 @@ public class Key : MonoBehaviour
             {
                 GameManager.HasKey = true;
                 Destroy(gameObject);
-                GameInterface.Instance.ShowMessage("You have picked up the key.");
+                GameInterface.Instance.ShowMessage("You have picked up a key.");
             }
         }
     }

@@ -15,15 +15,14 @@ public class EnemyController : MonoBehaviour
 
     private float wayPointSearchRadius = 15f;
     private int currentWayPoint = 0;
-
+    Vector3 direction;
+    Quaternion lookRotation;
 
     public List<GameObject> pathWayPoints = new List<GameObject>();
     private bool searchedWayPoints = false;
 
     Transform target;
-
     NavMeshAgent agent;
-
     Animator animator;
 
     private float targetSpeed;
@@ -36,15 +35,10 @@ public class EnemyController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        animator = GetComponentInChildren<Animator>();
-        
+        animator = GetComponentInChildren<Animator>();       
         state = State.Pathing;
-
-
         targetSpeed = 1f;
     }
-
-    
 
     void Update()
     {
@@ -65,9 +59,7 @@ public class EnemyController : MonoBehaviour
         if (distance <= chaseRadius && distance > attackDistance && PlayerController.Instance.Alive)
         {
             state = State.ChaseTarget;
-        }
-
-        
+        }   
 
         if (distance <= attackDistance && PlayerController.Instance.Alive)
         {
@@ -99,8 +91,7 @@ public class EnemyController : MonoBehaviour
             state = State.Pathing;
             animator.SetBool("isEating", false);
             FindPlayer();
-        }
-            
+        }   
 
         switch (state)
         {
@@ -171,8 +162,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
-
     void Idle()
     {
         animator.SetBool("isAttacking", false);
@@ -201,8 +190,8 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isAttacking", false);
         agent.isStopped = false;
 
-        Vector3 direction = (pathWayPoints[currentWayPoint].transform.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        direction = (pathWayPoints[currentWayPoint].transform.position - transform.position).normalized;
+        lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 6f);
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walking"))
@@ -290,11 +279,5 @@ public class EnemyController : MonoBehaviour
     public void FindPlayer()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, chaseRadius);
     }
 }
