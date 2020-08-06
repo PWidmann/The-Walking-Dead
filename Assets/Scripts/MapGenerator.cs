@@ -10,6 +10,8 @@ public class MapGenerator : MonoBehaviour
     [Header("Level Options")]
     public int bigRooms;
     public int startclosingRooms;
+    [Range(0, 100)]
+    public int enemySpawnChance = 50;
 
     [Header("Player Prefab")]
     public GameObject player;
@@ -41,7 +43,7 @@ public class MapGenerator : MonoBehaviour
     [Header("Level Object")]
     public GameObject levelObject;
     [HideInInspector]
-    public  NavMeshSurface levelMeshSurface;
+    public NavMeshSurface levelMeshSurface;
     private GameObject tempRoomObject;
 
     public Room currentRoom;
@@ -70,18 +72,14 @@ public class MapGenerator : MonoBehaviour
 
     private void Update()
     {
-
         if (currentRoom)
         {
             if (dungeonGenerated)
             {
                 if (!navMeshBuilt)
                 {
-                    
-                    Debug.Log("Nav mesh built.");
                     navMeshBuilt = true;
                 }
-                
             }
 
             // Connect rooms
@@ -124,11 +122,11 @@ public class MapGenerator : MonoBehaviour
                         Debug.Log("No end room found, generating new Dungeon...");
                         ResetDungeon();
                     }
-
                 }
             }
         }
 
+        // Generate new dungeon
         if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("JoystickButtonY"))
         {
             if (!levelStarted)
@@ -156,15 +154,7 @@ public class MapGenerator : MonoBehaviour
         roomCollision = false;
     }
 
-    void SpawnEnemies()
-    {
-        zombieSpawns = GameObject.FindGameObjectsWithTag("ZombieSpawn");
-
-        foreach (GameObject spawn in zombieSpawns)
-        {
-            Instantiate(zombiePrefab, spawn.transform.position, Quaternion.Euler(0, Random.Range(0, 360), 0));
-        }
-    }
+    
 
     void CreateConnection()
     {
@@ -209,7 +199,6 @@ public class MapGenerator : MonoBehaviour
                             else
                                 SpawnRoom(Room.RoomType.EndEast, "east");
                         }
-
                         break;
                     case 2:
                         //Check if place is free
@@ -483,10 +472,8 @@ public class MapGenerator : MonoBehaviour
                 break;
         }
 
-
         tempRoomObject.transform.parent = levelObject.transform;
         roomsToConnect.Add(tempRoomObject.GetComponent<Room>());
-
 
         roomsCreated++;
     }
@@ -500,8 +487,23 @@ public class MapGenerator : MonoBehaviour
             Destroy(levelObject.transform.GetChild(i).gameObject);
         }
 
-        
         StartGeneratingDungeon();
+    }
+
+    public void SpawnEnemies()
+    {
+        if (navMeshBuilt)
+        {
+            zombieSpawns = GameObject.FindGameObjectsWithTag("ZombieSpawn");
+
+            foreach (GameObject spawn in zombieSpawns)
+            {
+                int rnd = Random.Range(0, 101);
+
+                if (rnd > (100 - enemySpawnChance))
+                    Instantiate(zombiePrefab, spawn.transform.position, Quaternion.Euler(0, Random.Range(0, 360), 0));
+            }
+        }
     }
 
     public void SpawnPlayer()
@@ -509,12 +511,7 @@ public class MapGenerator : MonoBehaviour
         if (navMeshBuilt)
         {
             Instantiate(player, GameObject.Find("PlayerSpawn").transform.position, Quaternion.Euler(0, 90f, 0));
-
-            SpawnEnemies();
-
-            SpawnKey();
         }
-            
     }
 
     public void RespawnPlayer()
@@ -522,6 +519,7 @@ public class MapGenerator : MonoBehaviour
         Instantiate(player, GameObject.Find("PlayerSpawn").transform.position, Quaternion.Euler(0, 90f, 0));
     }
 
+    // Check room collision for valid dungeon
     void CheckForCollision()
     {
         foreach (Transform child in levelObject.transform)
@@ -542,10 +540,9 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
-
     }
 
-    void SpawnKey()
+    public void SpawnKey()
     {
         if (!keySpawned)
         {
@@ -561,6 +558,7 @@ public class MapGenerator : MonoBehaviour
                 }
                 else
                 {
+                    // Search for the furthest key spawn position from the player
                     if (Vector3.Distance(Vector3.zero, chosenSpawn.transform.position) < Vector3.Distance(Vector3.zero, spawn.transform.position))
                     {
                         chosenSpawn = spawn;
@@ -570,11 +568,11 @@ public class MapGenerator : MonoBehaviour
 
             GameObject keyObject = Instantiate(key, chosenSpawn.transform.position, Quaternion.Euler(0, 0, 90f));
             keyObject.transform.parent = levelObject.transform;
-
             keySpawned = true;
         }
     }
 
+    // For random big room roation
     float GetRoomRotation(int rnd)
     {
         switch (rnd)

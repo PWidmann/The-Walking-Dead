@@ -15,7 +15,7 @@ public class EndTrigger : MonoBehaviour
             distance = Vector3.Distance(transform.position, PlayerController.Instance.position);
         }
 
-        if (distance < triggerRadius)
+        if (distance < triggerRadius && GameManager.LevelStarted)
         {
             GameManager.EndReached = true;
             Debug.Log("End Reached");

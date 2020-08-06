@@ -7,8 +7,9 @@ public class GameManager : MonoBehaviour
     private static bool mapGenerated = false;
     private static bool hasKey = false;
     private static bool levelStarted = false;
+    private static bool welcomeScreen = false;
     private static float soundVolume = 0.5f;
-    private static float miniMapAlpha = 0.5f;
+    private static float miniMapAlpha = 0.35f;
     private static bool isInPauseMenu = false;
     private static bool endReached = false;
     private static bool resetEnemies = false;
@@ -21,4 +22,5 @@ public class GameManager : MonoBehaviour
     public static float MiniMapAlpha { get => miniMapAlpha; set => miniMapAlpha = value; }
     public static bool EndReached { get => endReached; set => endReached = value; }
     public static bool ResetEnemies { get => resetEnemies; set => resetEnemies = value; }
+    public static bool WelcomeScreen { get => welcomeScreen; set => welcomeScreen = value; }
 }

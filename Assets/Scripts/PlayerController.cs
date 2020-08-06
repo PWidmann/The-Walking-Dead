@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Alive)
+        if (Alive && !GameManager.EndReached)
         {
             animator.SetBool("isDeath", false);
             position = transform.position;

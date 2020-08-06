@@ -17,6 +17,7 @@ public class GameInterface : MonoBehaviour
     public GameObject miniMap;
     public RawImage miniMapImage;
     public GameObject deathPanel;
+    public GameObject winScreen;
     public GameObject pauseMenuPanel;
     public GameObject pauseText;
     public Slider miniMapAlphaSlider;
@@ -36,10 +37,9 @@ public class GameInterface : MonoBehaviour
 
         mapGeneratorPanel.SetActive(true);
 
-        if (GameManager.LevelStarted)
+        if (GameManager.LevelStarted && respawnPosition == null)
         {
             respawnPosition = GameObject.FindGameObjectWithTag("Respawn").transform.position;
-            
         }
             
 
@@ -69,51 +69,29 @@ public class GameInterface : MonoBehaviour
         }
 
 
-        if (PlayerController.Instance)
-        {
-            // Death Screen
-            if (PlayerController.Instance.Alive == false)
-            {
-                
-
-                deathPanel.SetActive(true);
-
-                //Reset player to start
-                if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("JoystickButtonB"))
-                {
-                    Debug.Log("Resetting player...");
-                    GameManager.ResetEnemies = true;
-                    player = GameObject.FindGameObjectWithTag("Player");
-                    Destroy(player);
-                    MapGenerator.Instance.RespawnPlayer();
-                    MiniMapCam.Instance.FindPlayer();
-                    deathPanel.SetActive(false);
-                }
-            }
-                
-            // Welcome Screen
-            if (!welcomeScreenShown && PlayerController.Instance.controller.isGrounded)
-            {
-                //welcomeScreen.SetActive(true);
-                //welcomeScreenShown = true;
-            }
-        }
-
+        DeathScreen();
+        WelcomeScreen();
         ShowKey();
         MiniMap();
         PauseMenu();
+        WinScreen();
     }
 
     public void StartGame()
     {
-        mapGeneratorPanel.SetActive(false);
-        gameCam.SetActive(true);
-        mapCam.SetActive(false);
+        if (MapGenerator.Instance.dungeonGenerated)
+        {
+            mapGeneratorPanel.SetActive(false);
+            gameCam.SetActive(true);
+            mapCam.SetActive(false);
 
-        MapGenerator.Instance.levelMeshSurface.BuildNavMesh();
-        MapGenerator.Instance.SpawnPlayer();
-        MapGenerator.Instance.levelStarted = true;
-        GameManager.LevelStarted = true;
+            MapGenerator.Instance.levelMeshSurface.BuildNavMesh();
+            MapGenerator.Instance.SpawnPlayer();
+            MapGenerator.Instance.SpawnEnemies();
+            MapGenerator.Instance.SpawnKey();
+            MapGenerator.Instance.levelStarted = true;
+            GameManager.LevelStarted = true;
+        }
     }
 
     public void SetCanMove()
@@ -139,6 +117,76 @@ public class GameInterface : MonoBehaviour
                 miniMap.SetActive(true);
             else
                 miniMap.SetActive(false);
+        }
+    }
+
+    public void WelcomeScreen()
+    {
+        if (PlayerController.Instance)
+        {
+            // Welcome Screen
+            if (!welcomeScreenShown && PlayerController.Instance.controller.isGrounded)
+            {
+                welcomeScreen.SetActive(true);
+                welcomeScreenShown = true;
+                GameManager.WelcomeScreen = true;
+            }
+
+            if (GameManager.WelcomeScreen)
+            {
+                if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetButtonDown("JoystickButtonA"))
+                {
+                    welcomeScreen.SetActive(false);
+                    GameManager.WelcomeScreen = false;
+                }
+            }
+        }
+    }
+
+    public void WinScreen()
+    {
+        if (GameManager.EndReached)
+        {
+            winScreen.SetActive(true);
+            Time.timeScale = 0;
+
+            if (Input.GetButtonDown("JoystickButtonA"))
+            {
+                NewGame();
+            }
+
+            if (Input.GetButtonDown("JoystickButtonX"))
+            {
+                QuitGame();
+            }
+        }
+        else
+        {
+            winScreen.SetActive(false);
+        }
+    }
+
+    public void DeathScreen()
+    {
+        // Death Screen
+        if (PlayerController.Instance)
+        {
+            if (PlayerController.Instance.Alive == false)
+            {
+                deathPanel.SetActive(true);
+
+                //Reset player to start
+                if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("JoystickButtonB"))
+                {
+                    Debug.Log("Resetting player...");
+                    GameManager.ResetEnemies = true;
+                    player = GameObject.FindGameObjectWithTag("Player");
+                    Destroy(player);
+                    MapGenerator.Instance.RespawnPlayer();
+                    MiniMapCam.Instance.FindPlayer();
+                    deathPanel.SetActive(false);
+                }
+            }
         }
     }
 
@@ -191,8 +239,12 @@ public class GameInterface : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(0);
+        GameManager.EndReached = false;
+        GameManager.LevelStarted = false;
+        Time.timeScale = 1;
+        winScreen.SetActive(false);
         GameManager.IsInPauseMenu = false;
+        SceneManager.LoadScene(0);
     }
 
     public void ContinueGame()
